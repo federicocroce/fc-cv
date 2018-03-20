@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom';
 // import './index.css';
 
 import './Styles/Main/index.css';
+import frameworkConfig from './Config/frameworkConfig';
+import Index from './Components/Sections/Index';
+import App from './Components/Sections/App';
 
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+frameworkConfig();
+ReactDOM.render(<Index />, document.getElementById('root'));
 registerServiceWorker();
