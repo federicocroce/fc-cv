@@ -7,11 +7,17 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.17.2",
+    "npm-run-all": "^4.1.2",
     "react-scripts": "1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build-css": "node-sass --include-path src src/Styles/Main/index.scss src/Styles/Main/index.css",
+    "watch-css": "nodemon -e scss -x npm-run-all build-css",
+    "start": "react-scripts start npm-run-all watch-css",
+    "testt": "npm-run-all watch-css && npm run react-scripts start",
+    "build": "react-scripts build npm run build-css",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
