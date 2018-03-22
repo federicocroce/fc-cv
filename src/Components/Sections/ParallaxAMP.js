@@ -7,7 +7,7 @@ class App extends Component {
       <div>
 
 
-        <section className="parallax" id="section10">
+        <section className="parallax" id="section1">
           <div className="home-container">
             <h1>Federico Croce</h1>
             <p>Esto es una prueba</p>
@@ -18,7 +18,7 @@ class App extends Component {
 
 
         </section>
-        <section className="parallax" id="section20">
+        <section className="parallax" id="section2">
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, metus a tristique aliquet, enim nibh efficitur sem,
@@ -38,7 +38,7 @@ class App extends Component {
           </p>
 
         </section>
-        <section className="parallax" id="section30">
+        <section className="parallax" id="section3">
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, metus a tristique aliquet, enim nibh efficitur sem,

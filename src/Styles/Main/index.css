@@ -3,6 +3,44 @@
   .table > * {
     display: table-cell; }
 
+h1 {
+  text-align: center;
+  padding: 30px;
+  font-size: 50px;
+  z-index: 1;
+  color: white; }
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-size: 30px 30px; }
+
+.parallax {
+  background: #292929 fixed no-repeat 0% 50%; }
+
+#section10 {
+  background: #292929 fixed no-repeat 50% 50%;
+  background-image: url("../../Assets/cv.jpg");
+  background-size: cover; }
+
+#section20 {
+  background-image: url("../../Assets/google.png");
+  background-size: 20%; }
+
+#section30 {
+  background-image: url("../../Assets/js.png");
+  background-size: 20%; }
+
+p {
+  padding: 30px 10%;
+  display: block;
+  font-size: 25px;
+  color: blue;
+  text-align: justify;
+  padding-left: 30%; }
+
 * {
   margin: 0;
   padding: 0;
@@ -99,10 +137,86 @@ form {
   .table > * {
     display: table-cell; }
 
+h1 {
+  text-align: center;
+  padding: 30px;
+  font-size: 50px;
+  z-index: 1;
+  color: white; }
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-size: 30px 30px; }
+
+.parallax {
+  background: #292929 fixed no-repeat 0% 50%; }
+
+#section10 {
+  background: #292929 fixed no-repeat 50% 50%;
+  background-image: url("../../Assets/cv.jpg");
+  background-size: cover; }
+
+#section20 {
+  background-image: url("../../Assets/google.png");
+  background-size: 20%; }
+
+#section30 {
+  background-image: url("../../Assets/js.png");
+  background-size: 20%; }
+
+p {
+  padding: 30px 10%;
+  display: block;
+  font-size: 25px;
+  color: blue;
+  text-align: justify;
+  padding-left: 30%; }
+
 .table {
   display: table; }
   .table > * {
     display: table-cell; }
+
+h1 {
+  text-align: center;
+  padding: 30px;
+  font-size: 50px;
+  z-index: 1;
+  color: white; }
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-size: 30px 30px; }
+
+.parallax {
+  background: #292929 fixed no-repeat 0% 50%; }
+
+#section10 {
+  background: #292929 fixed no-repeat 50% 50%;
+  background-image: url("../../Assets/cv.jpg");
+  background-size: cover; }
+
+#section20 {
+  background-image: url("../../Assets/google.png");
+  background-size: 20%; }
+
+#section30 {
+  background-image: url("../../Assets/js.png");
+  background-size: 20%; }
+
+p {
+  padding: 30px 10%;
+  display: block;
+  font-size: 25px;
+  color: blue;
+  text-align: justify;
+  padding-left: 30%; }
 
 .input-text-container {
   position: relative;
@@ -513,44 +627,6 @@ form {
   .home-container p {
     text-align: center;
     padding: 0; }
-
-h1 {
-  text-align: center;
-  padding: 30px;
-  font-size: 50px;
-  z-index: 1;
-  color: white; }
-
-section {
-  width: 100%;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-  background-size: 30px 30px; }
-
-.parallax {
-  background: #292929 fixed no-repeat 0% 50%; }
-
-#section1 {
-  background: #292929 fixed no-repeat 50% 50%;
-  background-image: url("../../Assets/cv.jpg");
-  background-size: cover; }
-
-#section2 {
-  background-image: url("../../Assets/google.png");
-  background-size: 20%; }
-
-#section3 {
-  background-image: url("../../Assets/js.png");
-  background-size: 20%; }
-
-p {
-  padding: 30px 10%;
-  display: block;
-  font-size: 25px;
-  color: white;
-  text-align: justify;
-  padding-left: 30%; }
 
 .users .button-container {
   width: 100%;

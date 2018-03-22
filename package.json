@@ -20,7 +20,7 @@
     "redux-devtools-extension": "^2.13.2"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar --source-map src/Styles/Main/index.scss src/Styles/Main/index.css",
+    "build-css": "node-sass-chokidar src/Styles/Main/index.scss src/Styles/Main/index.css",
     "watch-css": "nodemon -e scss -x npm-run-all build-css",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
