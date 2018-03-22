@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import logo from './fondo.jpg';
 
-// import './App.css';
-
 class App extends Component {
   render() {
     return (
@@ -21,7 +19,7 @@ class App extends Component {
           <amp-img src={logo} layout="responsive" width="266" height="150"></amp-img>
           <h1>SOY FEDE</h1>
         </section>*/}
-        <amp-img src={logo} layout="flex-item" width="266" height="150"></amp-img>
+        {/* <amp-img src={logo} layout="flex-item" width="266" height="150"></amp-img> */}
         <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, metus a tristique aliquet, enim nibh efficitur sem,
       ut iaculis urna justo eu diam. Nullam cursus sapien et sodales posuere. Vestibulum ante ipsum primis in faucibus orci

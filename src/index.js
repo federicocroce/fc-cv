@@ -6,9 +6,10 @@ import './Styles/Main/index.css';
 import frameworkConfig from './Config/frameworkConfig';
 import Index from './Components/Sections/Index';
 import AppAMP from './Components/Sections/App';
+import Parallax from './Components/Sections/Parallax';
 
 import registerServiceWorker from './registerServiceWorker';
 
 frameworkConfig();
-ReactDOM.render(<AppAMP />, document.getElementById('root'));
+ReactDOM.render(<Parallax />, document.getElementById('root'));
 registerServiceWorker();
