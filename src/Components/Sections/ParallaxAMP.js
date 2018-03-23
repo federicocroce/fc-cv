@@ -14,7 +14,7 @@ class App extends Component {
           </div>
 
 
-          {/* <amp-img src={logo} layout="responsive" width="266" height="150"></amp-img> */}
+           <amp-img src={logo} layout="fixed" width="266" height="150"></amp-img> 
 
 
         </section>

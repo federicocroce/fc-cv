@@ -7,6 +7,32 @@ $secondary-color-light: #4f5b62;
 $secondary-color-dark: #000a12;
 $secondary-color-text: #ffffff;
 
+// @import url('https://fonts.googleapis.com/css?family=Mina');
+// @import url('https://fonts.googleapis.com/css?family=Raleway');
+// @import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+// @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+// @import url('https://fonts.googleapis.com/css?family=Catamaran');
+// @import url('https://fonts.googleapis.com/css?family=Montserrat');
+// @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed');
+// @import url('https://fonts.googleapis.com/css?family=Meera+Inimai');
+// @import url('https://fonts.googleapis.com/css?family=PT+Serif');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
+
+body{
+    // font-family: 'Mina', sans-serif;
+    // font-family: 'Raleway', sans-serif;
+    // font-family: 'Titillium Web', sans-serif;
+    // font-family: 'Nanum Gothic', sans-serif;
+    // font-family: 'Catamaran', sans-serif;
+    // font-family: 'Montserrat', sans-serif;
+    // font-family: 'IBM Plex Sans Condensed', sans-serif;
+    // font-family: 'Meera Inimai', sans-serif;
+    // font-family: 'PT Serif', serif;
+    font-family: 'Merriweather', serif;
+
+}
+
 .table {
     display: table;
     > * {display: table-cell;}
@@ -32,28 +58,34 @@ section{
 
 .parallax{
     background: #292929 fixed no-repeat 0% 50%;
+    background-size: cover;
 }
+
+
 
 #section10{
     background: #292929 fixed no-repeat 50% 50%;
     background-image: url('../../Assets/cv.jpg');
     background-size: cover;
 }
-#section20{
-    background-image: url('../../Assets/google.png');
-    background-size: 20%;
-}
-#section30{
-    background-image: url('../../Assets/js.png');
-    background-size: 20%;
-}
+// #section20{
+//     background-image: url('../../Assets/code.jpg');
+//     background-size: 20%;
+// }
+// #section30{
+//     background-image: url('../../Assets/js.jpg');
+//     background-size: 20%;
+// }
 
+[id*="section"]{
+    background: #292929;
+}
 
 p{
     padding: 30px 10%;
     display: block;
     font-size: 25px;
-    color: blue;
+    color: white;
     text-align: justify;
     padding-left: 30%;
 }

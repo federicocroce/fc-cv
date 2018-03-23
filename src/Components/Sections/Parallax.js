@@ -14,11 +14,12 @@ class App extends Component {
           </div>
 
 
-          {/* <amp-img src={logo} layout="responsive" width="266" height="150"></amp-img> */}
+          {/*<amp-img src={logo} layout="fixed" width="266" height="150"></amp-img>*/}
+          {/*<img src={logo} alt="Smiley face" height="500" width="500" />*/}
 
 
         </section>
-        <section className="parallax" id="section20">
+        <section className="" id="section20">
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, metus a tristique aliquet, enim nibh efficitur sem,
@@ -38,7 +39,7 @@ class App extends Component {
           </p>
 
         </section>
-        <section className="parallax" id="section30">
+        <section className="" id="section30">
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, metus a tristique aliquet, enim nibh efficitur sem,

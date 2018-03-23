@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+body {
+  font-family: 'Merriweather', serif; }
+
 .table {
   display: table; }
   .table > * {
@@ -18,26 +22,22 @@ section {
   background-size: 30px 30px; }
 
 .parallax {
-  background: #292929 fixed no-repeat 0% 50%; }
+  background: #292929 fixed no-repeat 0% 50%;
+  background-size: cover; }
 
 #section10 {
   background: #292929 fixed no-repeat 50% 50%;
   background-image: url("../../Assets/cv.jpg");
   background-size: cover; }
 
-#section20 {
-  background-image: url("../../Assets/google.png");
-  background-size: 20%; }
-
-#section30 {
-  background-image: url("../../Assets/js.png");
-  background-size: 20%; }
+[id*="section"] {
+  background: #292929; }
 
 p {
   padding: 30px 10%;
   display: block;
   font-size: 25px;
-  color: blue;
+  color: white;
   text-align: justify;
   padding-left: 30%; }
 
@@ -131,92 +131,6 @@ p {
 
 form {
   padding: 20px; }
-
-.table {
-  display: table; }
-  .table > * {
-    display: table-cell; }
-
-h1 {
-  text-align: center;
-  padding: 30px;
-  font-size: 50px;
-  z-index: 1;
-  color: white; }
-
-section {
-  width: 100%;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-  background-size: 30px 30px; }
-
-.parallax {
-  background: #292929 fixed no-repeat 0% 50%; }
-
-#section10 {
-  background: #292929 fixed no-repeat 50% 50%;
-  background-image: url("../../Assets/cv.jpg");
-  background-size: cover; }
-
-#section20 {
-  background-image: url("../../Assets/google.png");
-  background-size: 20%; }
-
-#section30 {
-  background-image: url("../../Assets/js.png");
-  background-size: 20%; }
-
-p {
-  padding: 30px 10%;
-  display: block;
-  font-size: 25px;
-  color: blue;
-  text-align: justify;
-  padding-left: 30%; }
-
-.table {
-  display: table; }
-  .table > * {
-    display: table-cell; }
-
-h1 {
-  text-align: center;
-  padding: 30px;
-  font-size: 50px;
-  z-index: 1;
-  color: white; }
-
-section {
-  width: 100%;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-  background-size: 30px 30px; }
-
-.parallax {
-  background: #292929 fixed no-repeat 0% 50%; }
-
-#section10 {
-  background: #292929 fixed no-repeat 50% 50%;
-  background-image: url("../../Assets/cv.jpg");
-  background-size: cover; }
-
-#section20 {
-  background-image: url("../../Assets/google.png");
-  background-size: 20%; }
-
-#section30 {
-  background-image: url("../../Assets/js.png");
-  background-size: 20%; }
-
-p {
-  padding: 30px 10%;
-  display: block;
-  font-size: 25px;
-  color: blue;
-  text-align: justify;
-  padding-left: 30%; }
 
 .input-text-container {
   position: relative;
