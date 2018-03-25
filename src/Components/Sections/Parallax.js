@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './fondo.jpg';
+import Test from './test'
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
           <div className="home-container">
             <h1>Federico Croce</h1>
             <p>Esto es una prueba</p>
+            <Test />
           </div>
 
 

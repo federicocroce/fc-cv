@@ -12,5 +12,5 @@ import ParallaxAMP from './Components/Sections/ParallaxAMP';
 import registerServiceWorker from './registerServiceWorker';
 
 frameworkConfig();
-ReactDOM.render(<Parallax />, document.getElementById('root'));
+ReactDOM.render(<Index />, document.getElementById('root'));
 registerServiceWorker();
