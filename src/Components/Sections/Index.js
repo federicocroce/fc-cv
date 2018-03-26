@@ -5,6 +5,7 @@ import { ConnectedRouter } from "react-router-redux";
 import { Switch, Route, NavLink } from 'react-router-dom';
 
 import Test from './test'
+import Parallax from './Parallax'
 
 // import { store, history } from '../../Config/Store.js';
 // import { mainLinksRoutes as linksRoutes } from '../../Config/AppRoutes.js'
@@ -16,7 +17,7 @@ const Index = () => {
     <Provider store={React.config.storeHistory.store}>
       <ConnectedRouter history={React.config.storeHistory.history}>
         <div>
-          <Test />
+          <Parallax />
           <div className="nav-bar-container">
             <Switch>
 

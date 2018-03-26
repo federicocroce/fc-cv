@@ -12,7 +12,7 @@ class App extends Component {
           <div className="home-container">
             <h1>Federico Croce</h1>
             <p>Esto es una prueba</p>
-            <Test />
+            {/* <Test /> */}
           </div>
 
 
@@ -21,7 +21,9 @@ class App extends Component {
 
 
         </section>
-        <section className="" id="section20">
+
+        <Test />
+        {/* <section className="" id="section20">
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis, metus a tristique aliquet, enim nibh efficitur sem,
@@ -83,7 +85,7 @@ class App extends Component {
             sem vel purus auctor, ut venenatis tellus tristique. Phasellus molestie diam orci, nec gravida turpis bibendum ut.
             Sed sagittis aliquet lorem sed dictum.
           </p>
-        </section>
+        </section> */}
 
 
       </div>

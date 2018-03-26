@@ -1,7 +1,7 @@
 import React from 'react';
 import * as firebase from 'firebase';
 
-const collection = 'test';
+const collection = 'estudies';
 
 const actions = {};
 

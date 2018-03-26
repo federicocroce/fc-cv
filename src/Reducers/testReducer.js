@@ -1,11 +1,10 @@
 // a reducer takes in two things
 // import { store } from '../Store.js'
 // import { postsResponse } from "../Data/data";
+import React from 'react';
 
 const data = {
-    collection: {
-        age: 29,
-    }
+    collection: []
 }
 
 
@@ -13,9 +12,13 @@ const test = (state = data, action) => {
     // console.error("ENTRA");
     switch (action.type) {
         case 'FETCH_TEST':
+        const response = state.collection;
+        response.push(action.payload);
+        // response.img = React.config.fireStoreApp.getStorageUrlImg(action.payload.img);
+
             return {
                 ...state,
-                collection: action.payload
+                collection: response
             };
         case 'FETCH_TEXTO':
             return {
