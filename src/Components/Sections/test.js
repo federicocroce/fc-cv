@@ -22,14 +22,14 @@ class testSection extends React.Component {
         const setEstudiesContent = (props, index) => {
 
             return (
-                <div>
+                <section>
 
                     <h2>{props.title}</h2>
 
-                    {props.content.length > 0 ? props.content.map((item, index) => { return <h3 key={index}>{item} </h3> }) : null}
+                    {props.content.length > 0 ? props.content.map((item, index) => { return <p key={index}>{item} </p> }) : null}
 
                     {props.img.length > 0 ? props.img.map((item, index) => { return <amp-img key={index} src={item} layout="fixed" width="266" height="150"></amp-img> }) : null}
-                </div>
+                </section>
             );
 
         }

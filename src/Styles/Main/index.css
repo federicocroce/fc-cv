@@ -14,38 +14,11 @@ h1 {
   z-index: 1;
   color: white; }
 
-section {
-  width: 100%;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-  background-size: 30px 30px; }
-
-.parallax {
-  background: #292929 fixed no-repeat 0% 50%;
-  background-size: cover; }
-
-#section10 {
-  background: #292929 fixed no-repeat 50% 50%;
-  background-image: url("../../Assets/cv.jpg");
-  background-size: cover; }
-
-[id*="section"] {
-  background: #292929; }
-
-p {
-  padding: 30px 10%;
-  display: block;
-  font-size: 25px;
-  color: white;
-  text-align: justify;
-  padding-left: 30%; }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #000a12;
+  color: #ffffff;
   text-decoration: none; }
 
 .title-home {
@@ -131,6 +104,32 @@ p {
 
 form {
   padding: 20px; }
+
+.parallax {
+  background: #292929 fixed no-repeat 0% 50%;
+  background-size: cover; }
+
+#section10 {
+  background: #292929 fixed no-repeat 50% 50%;
+  background-image: url("../../Assets/cv.jpg");
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0; }
+
+section {
+  background: #000a12;
+  min-height: 100vh;
+  padding: 20px 10%; }
+
+body {
+  background: #000a12;
+  font-size: 16px; }
+  body p {
+    padding: 30px 0;
+    font-size: 1em;
+    text-align: justify; }
 
 .input-text-container {
   position: relative;
