@@ -7,7 +7,8 @@ import { posts } from './postsReducer';
 import { maps } from './gMapsReducer';
 // import { user } from './userReducer';
 import { user } from './usersReducer';
-import { test } from './testReducer';
+import { reducerEstudies as estudies } from './reducerEstudies';
+import { reducerExperiences as experiences } from './reducerExperiences';
 
 
 const allReducers = {
@@ -15,7 +16,8 @@ const allReducers = {
     maps,
     // user,
     user,
-    test,
+    experiences,
+    estudies,
     // form:reduxFormReducer,
     router: routerReducer
 }

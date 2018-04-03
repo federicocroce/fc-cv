@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // color: $primary-color-text;
+    text-decoration: none;
+    // list-style-type: none;
+}
+
+// section {
+//     background: $secondary-color-dark;
+//     min-height: 100vh;
+//     padding: 20px 10%;
+// }
+body {
+    // background: $secondary-color-dark;
+    font-size: 16px;
+    // color: white;
+    // p {
+    //     padding: 30px 0;
+    //     font-size: 1em;
+    //     text-align: justify;
+    // }
+}
+
+main {
+    width: 21cm;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 3px;
+    h1 {
+        font-size: 2em;
+        // padding: 10px;
+    }
+    &>* {
+        min-height: 100vh;
+        display: inline-block;
+    }
+    .aside-left-container {
+        background: $primary-color;
+        color: $primary-color-text;
+        width: 30%;
+        float: left;
+        h1.name {
+            text-align: right;
+        }
+        .img-profile-container {
+            position: relative;
+            .content-img {
+                position: absolute;
+                bottom: 20%;
+                right: 10%;
+                h1 {
+                    font-size: 1.5em;
+                }
+            }
+        }
+        // .img-perfil{
+        //    background: url('https://firebasestorage.googleapis.com/v0/b/test-74eeb.appspot.com/o/images%2Ffoto-cv.jpg?alt=media&token=2909595b-f623-4b24-a019-a488cbb06b25');
+        // }
+    }
+    .main-right-section {
+        background: $secondary-color-light;
+        color: $grey-dark;
+        width: 70%;
+        // padding: 4%;
+        h1.name {
+            text-align: left;
+        }
+        section {
+            background-color: $primary-color-text;
+            margin: 4%;
+            padding: 4%;
+            [class^="icon-"] {
+                display: inline-block;
+                font-size: 2em;
+            }
+            h2 {
+                display: inline-block;
+                padding-left: 20px;
+            }
+        }
+    }
+}

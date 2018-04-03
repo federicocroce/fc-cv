@@ -5,6 +5,7 @@ import { ConnectedRouter } from "react-router-redux";
 import { Switch, Route, NavLink } from 'react-router-dom';
 
 import Test from './test'
+import MinCV from './MinCV'
 import Parallax from './Parallax'
 
 // import { store, history } from '../../Config/Store.js';
@@ -17,7 +18,7 @@ const Index = () => {
     <Provider store={React.config.storeHistory.store}>
       <ConnectedRouter history={React.config.storeHistory.history}>
         <div>
-          <Parallax />
+          <MinCV />
           <div className="nav-bar-container">
             <Switch>
 

@@ -5,7 +5,7 @@ const collection = 'estudies';
 
 const actions = {};
 
-actions.fetchObjects = dispatch => React.config.fireStoreApp.fetchObjects(collection, dispatch, 'FETCH_TEST');
+actions.fetchObjects = dispatch => React.config.fireStoreApp.fetchObjects(collection, dispatch, 'FETCH_ESTUDIES');
 // actions.create = post =>  React.config.firebaseApp.create(dbRef, post);
 // actions.remove = (key) => React.config.firebaseApp.remove(dbRef, key);
 // actions.update = (post, key) => React.config.firebaseApp.update(dbRef, post, key);

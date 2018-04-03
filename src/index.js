@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 // import './index.css';
 
 import './Styles/Main/index.css';
+import './Assets/icons/style.css';
 import frameworkConfig from './Config/frameworkConfig';
 import Index from './Components/Sections/Index';
 import AppAMP from './Components/Sections/App';

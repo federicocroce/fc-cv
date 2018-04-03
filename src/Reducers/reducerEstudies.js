@@ -4,21 +4,21 @@
 import React from 'react';
 
 const data = {
-    collection: []
+    estudies: []
 }
 
 
-const test = (state = data, action) => {
+const reducerEstudies = (state = data, action) => {
     // console.error("ENTRA");
     switch (action.type) {
-        case 'FETCH_TEST':
-        const response = state.collection;
+        case 'FETCH_ESTUDIES':
+        const response = state.estudies;
         response.push(action.payload);
         // response.img = React.config.fireStoreApp.getStorageUrlImg(action.payload.img);
 
             return {
                 ...state,
-                collection: response
+                estudies: response
             };
         case 'FETCH_TEXTO':
             return {
@@ -40,4 +40,4 @@ const test = (state = data, action) => {
     }
 }
 
-export { test };
+export { reducerEstudies };
