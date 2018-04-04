@@ -38,7 +38,7 @@ main {
         display: inline-block;
     }
     .aside-left-container {
-        background: $primary-color;
+        background: $primary-color-light;
         color: $primary-color-text;
         width: 30%;
         float: left;
@@ -64,22 +64,54 @@ main {
         background: $secondary-color-light;
         color: $grey-dark;
         width: 70%;
+        padding: 3%;
         // padding: 4%;
         h1.name {
             text-align: left;
         }
         section {
             background-color: $primary-color-text;
-            margin: 4%;
-            padding: 4%;
+            margin: 6% 0;
+            padding: 6% 0 6% 6%;
             [class^="icon-"] {
                 display: inline-block;
                 font-size: 2em;
             }
+            h2,
+            h3,
+            h4,
+            a {
+                line-height: 1.5em;
+            }
             h2 {
                 display: inline-block;
-                padding-left: 20px;
+                line-height: 37px;
             }
+            h3,
+            a {
+                font-size: 1.1em;
+                color: $grey-dark;
+            }
+            h4 {
+                color: $color-1e0;
+                font-size: 1em;
+            }
+            article {
+                padding: 15px 0;
+                border-bottom: 1px solid $grey-dark;
+                &:last-of-type {
+                    border-bottom: none;
+                }
+            }
+            &:first-of-type{
+                margin-top: 0; 
+            }
+            &:last-of-type{
+                margin-bottom: 0; 
+            }
+        }
+        .container-detail {
+            padding-left: 10px;
         }
     }
 }

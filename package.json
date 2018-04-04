@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "firebase": "^4.9.0",
+    "html-react-parser": "^0.4.3",
     "jquery-lite": "^2.2.3",
     "node-sass-chokidar": "^1.1.2",
     "nodemon": "^1.17.2",
