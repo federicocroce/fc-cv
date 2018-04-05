@@ -9,6 +9,7 @@ import { maps } from './gMapsReducer';
 import { user } from './usersReducer';
 import { reducerEstudies as estudies } from './reducerEstudies';
 import { reducerExperiences as experiences } from './reducerExperiences';
+import { reducerPersonalData as personalData } from './reducerPersonalData';
 
 
 const allReducers = {
@@ -18,6 +19,7 @@ const allReducers = {
     user,
     experiences,
     estudies,
+    personalData,
     // form:reduxFormReducer,
     router: routerReducer
 }

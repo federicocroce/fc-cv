@@ -4,32 +4,18 @@
 import React from 'react';
 
 const data = {
-    list: [],
-    generic: {}
+    list: []
 }
 
 
-const reducerEstudies = (state = data, action) => {
+const reducerPersonalData = (state = data, action) => {
     // console.error("ENTRA");
     switch (action.type) {
-        case 'FETCH_ESTUDIES':
-            const list = [];
-            let generic = state.generic;
-
-
-            action.payload.map((data, index) => {
-                if (data.type != "generic") {
-                    list.push(data);
-                }
-                else{
-                    generic = data;
-                }
-            });
-          
+        case 'FETCH_PERSONAL_DATA':
+           
             return {
                 ...state,
-                list,
-                generic
+                list: action.payload.personalData
             };
         case 'FETCH_TEXTO':
             return {
@@ -51,4 +37,4 @@ const reducerEstudies = (state = data, action) => {
     }
 }
 
-export { reducerEstudies };
+export { reducerPersonalData };

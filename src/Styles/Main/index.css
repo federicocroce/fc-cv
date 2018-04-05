@@ -24,9 +24,10 @@ main {
   margin: 0 auto;
   padding: 3px; }
   main.table {
-    width: 21cm; }
+    max-width: 21cm;
+    table-layout: fixed; }
   main h1 {
-    font-size: 2em; }
+    font-size: 1.5em; }
   main > * {
     min-height: 100vh;
     display: inline-block; }
@@ -40,10 +41,24 @@ main {
       position: relative; }
       main .aside-left-container .img-profile-container .content-img {
         position: absolute;
-        bottom: 20%;
-        right: 10%; }
+        bottom: 15%;
+        right: 4%; }
         main .aside-left-container .img-profile-container .content-img h1 {
-          font-size: 1.5em; }
+          font-size: 1.3em; }
+        main .aside-left-container .img-profile-container .content-img p {
+          font-size: 0.8em; }
+    main .aside-left-container article {
+      padding: 8% 0 8% 8%; }
+      main .aside-left-container article p {
+        font-size: 0.7em; }
+      main .aside-left-container article > div {
+        width: 85%;
+        border-bottom: 1px solid #398aca;
+        padding: 0 8% 8% 0; }
+    main .aside-left-container [class^="icon-"] {
+      display: inline-block;
+      font-size: 1.3em;
+      padding-right: 20px; }
   main .main-right-section {
     background: #e3e3e3;
     color: #737373;
@@ -61,23 +76,28 @@ main {
       main .main-right-section section h2,
       main .main-right-section section h3,
       main .main-right-section section h4,
-      main .main-right-section section a {
-        line-height: 1.5em; }
+      main .main-right-section section a,
+      main .main-right-section section p,
+      main .main-right-section section span {
+        line-height: 2em; }
       main .main-right-section section h2 {
         display: inline-block;
         line-height: 37px; }
       main .main-right-section section h3,
       main .main-right-section section a {
-        font-size: 1.1em;
-        color: #737373; }
+        font-size: 1em;
+        color: #737373;
+        line-height: 1em; }
       main .main-right-section section h4 {
         color: #6eb1e0;
-        font-size: 1em; }
+        font-size: 0.8em; }
       main .main-right-section section article {
         padding: 15px 0;
         border-bottom: 1px solid #737373; }
         main .main-right-section section article:last-of-type {
           border-bottom: none; }
+        main .main-right-section section article div {
+          padding-right: 5%; }
       main .main-right-section section:first-of-type {
         margin-top: 0; }
       main .main-right-section section:last-of-type {

@@ -13,17 +13,28 @@ const reducerExperiences = (state = data, action) => {
     // console.error("ENTRA");
     switch (action.type) {
         case 'FETCH_EXPERIENCES':
-            const response = state.list;
-            const generic = state.generic;
+            const list = [];
+            let generic = state.generic;
 
-            if (action.payload.type != "generic") {
-                response.push(action.payload);
-            }
+
+            action.payload.map((data, index) => {
+                if (data.type != "generic") {
+                    list.push(data);
+                }
+                else{
+                    generic = data;
+                }
+            });
+
+
+            // if (action.payload.type != "generic") {
+            //     list.push(action.payload);
+            // }
 
             return {
                 ...state,
-                list: response,
-                generic: action.payload.type == "generic" ? action.payload : state.generic
+                list,
+                generic
             };
         case 'FETCH_TEXTO':
             return {

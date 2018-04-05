@@ -51,29 +51,37 @@ fireStoreApp.getStorageUrlImg = function (path) {
   });
 }
 
-// const snapshotToArray = snapshot => {
-//   let returnArr = [];
 
-//   snapshot.forEach(childSnapshot => {
-//     let item = { [childSnapshot.key]: childSnapshot.val() }
-//     returnArr.push(item);
-//   });
-//   return returnArr;
-// };
-
-
-// // const setFirebase = () => {
 
 fireStoreApp.fetchObjects = (collection, dispatch, action) => {
-  db.collection(collection).get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      dispatch({
-        type: action,
-        payload: doc.data()
-      });
+  db.collection(collection).onSnapshot(function (snapshot) {
+    // snapshot.docChanges.forEach(function (change) {
+
+    const array = [];
+    snapshot.forEach((doc) => {
+      array.push(doc.data());
+      // });
+    });
+    dispatch({
+      type: action,
+      payload: array.length > 1 ? array : array[0]
     });
   });
 };
+
+
+
+
+// fireStoreApp.fetchObjects = (collection, dispatch, action) => {
+//   db.collection(collection).get().then((querySnapshot) => {
+//     querySnapshot.forEach((doc) => {
+//       dispatch({
+//         type: action,
+//         payload: doc.data()
+//       });
+//     });
+//   });
+// };
 
 
 

@@ -1,8 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; // color: $primary-color-text;
-    text-decoration: none; // list-style-type: none;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
 // section {
@@ -22,7 +22,8 @@ body {
 
 main {
     &.table {
-        width: 21cm;
+        max-width: 21cm;
+        table-layout: fixed;
     }
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
     0 6px 6px rgba(0, 0, 0, 0.23);
@@ -30,7 +31,7 @@ main {
     margin: 0 auto;
     padding: 3px;
     h1 {
-        font-size: 2em; // padding: 10px;
+        font-size: 1.5em; // padding: 10px;
     }
     &>* {
         min-height: 100vh;
@@ -48,15 +49,35 @@ main {
             position: relative;
             .content-img {
                 position: absolute;
-                bottom: 20%;
-                right: 10%;
+                bottom: 15%;
+                right: 4%;
                 h1 {
-                    font-size: 1.5em;
+                    font-size: 1.3em;
+                }
+                p {
+                    font-size: 0.8em;
                 }
             }
-        } // .img-perfil{
-        //    background: url('https://firebasestorage.googleapis.com/v0/b/test-74eeb.appspot.com/o/images%2Ffoto-cv.jpg?alt=media&token=2909595b-f623-4b24-a019-a488cbb06b25');
-        // }
+        }
+        article {
+            padding: 8% 0 8% 8%;
+            p {
+                font-size: 0.7em;
+            }
+            &>div {
+                width: 85%;
+                border-bottom: 1px solid $color-aca;
+                padding: 0 8% 8% 0;
+            }
+            // div:last-of-type {
+            //     border-bottom: none;
+            // }
+        }
+        [class^="icon-"] {
+            display: inline-block;
+            font-size: 1.3em;
+            padding-right: 20px;
+        }
     }
     .main-right-section {
         background: $secondary-color-light;
@@ -77,8 +98,10 @@ main {
             h2,
             h3,
             h4,
-            a {
-                line-height: 1.5em;
+            a,
+            p,
+            span {
+                line-height: 2em;
             }
             h2 {
                 display: inline-block;
@@ -86,18 +109,22 @@ main {
             }
             h3,
             a {
-                font-size: 1.1em;
+                font-size: 1em;
                 color: $grey-dark;
+                line-height: 1em;
             }
             h4 {
                 color: $color-1e0;
-                font-size: 1em;
+                font-size: 0.8em;
             }
             article {
                 padding: 15px 0;
                 border-bottom: 1px solid $grey-dark;
                 &:last-of-type {
                     border-bottom: none;
+                }
+                div {
+                    padding-right: 5%;
                 }
             }
             &:first-of-type {

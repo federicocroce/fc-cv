@@ -15,6 +15,7 @@ class MinCV extends React.Component {
         // if (this.props.user.list.length == 0)
         this.props.fetchEstudies();
         this.props.fetchExperiences();
+        this.props.fetchPersonalData();
     }
 
 
@@ -55,13 +56,12 @@ class MinCV extends React.Component {
         // }
 
         const props = this.props;
-        const estudies = props.estudies;
-        const experiences = props.experiences;
+        const personalData = props.personalData;
 
         const content = [
             props.experiences,
             props.estudies
-            
+
         ];
 
 
@@ -78,9 +78,26 @@ class MinCV extends React.Component {
                             <p>Front-End Develop</p>
                         </div>
                     </div>
+
+                    {personalData.list.length > 0 ?
+                        <section>
+                            {personalData.list.map((data, index) => {
+                                return (
+                                    <article key={index} className="table">
+                                        <i className={data.icon}></i>
+                                        <div className="container-detail">
+                                            <p>{data.content}</p>
+                                            <p>{data.subcontent}</p>
+                                        </div>
+                                    </article>
+                                );
+                            })}
+                        </section>
+                        : null
+                    }
+
                 </aside>
                 <section className="main-right-section">
-
 
                     {content.map((data, index) => {
                         return (
@@ -124,7 +141,8 @@ class MinCV extends React.Component {
 const mapStateToProps = (state) => {
     return {
         estudies: state.estudies,
-        experiences: state.experiences
+        experiences: state.experiences,
+        personalData: state.personalData,
     };
 }
 
@@ -135,6 +153,9 @@ const mapDispatchToProps = dispatch => {
         },
         fetchExperiences() {
             React.actions.actionsExperiences.fetchObjects(dispatch)
+        },
+        fetchPersonalData() {
+            React.actions.actionsPersonalData.fetchObjects(dispatch)
         }
     };
 }
