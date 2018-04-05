@@ -4,7 +4,8 @@
 import React from 'react';
 
 const data = {
-    estudies: []
+    list: [],
+    generic: {}
 }
 
 
@@ -12,13 +13,17 @@ const reducerEstudies = (state = data, action) => {
     // console.error("ENTRA");
     switch (action.type) {
         case 'FETCH_ESTUDIES':
-        const response = state.estudies;
-        response.push(action.payload);
-        // response.img = React.config.fireStoreApp.getStorageUrlImg(action.payload.img);
+            const response = state.list;
+            const generic = state.generic;
 
+            if (action.payload.type != "generic") {
+                response.push(action.payload);
+            }
+          
             return {
                 ...state,
-                estudies: response
+                list: response,
+                generic: action.payload.type == "generic" ? action.payload : state.generic
             };
         case 'FETCH_TEXTO':
             return {

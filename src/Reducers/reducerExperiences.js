@@ -4,8 +4,8 @@
 import React from 'react';
 
 const data = {
-    experiences: [],
-    generic:{}
+    list: [],
+    generic: {}
 }
 
 
@@ -13,20 +13,16 @@ const reducerExperiences = (state = data, action) => {
     // console.error("ENTRA");
     switch (action.type) {
         case 'FETCH_EXPERIENCES':
-        const response = state.experiences;
-        const generic = state.generic;
+            const response = state.list;
+            const generic = state.generic;
 
-        if(action.payload.type != "generic"){
-            response.push(action.payload);
-        }
-        // else{
-        //     generic = action.payload;
-        // }
-        // response.img = React.config.fireStoreApp.getStorageUrlImg(action.payload.img);
+            if (action.payload.type != "generic") {
+                response.push(action.payload);
+            }
 
             return {
                 ...state,
-                experiences: response,
+                list: response,
                 generic: action.payload.type == "generic" ? action.payload : state.generic
             };
         case 'FETCH_TEXTO':

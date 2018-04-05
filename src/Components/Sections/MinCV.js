@@ -22,43 +22,51 @@ class MinCV extends React.Component {
     render() {
 
 
-        const setEstudiesContent = (props, index) => {
+        const setContent = (props, index) => {
 
             return (
-                <article key={index}>
-
-                    {/*<i className="icon-android"></i><h2>{props.title}</h2>*/}
-                    <h3>{props.title}</h3>
-
-                    {props.content.length > 0 ? props.content.map((item, index) => { return <li key={index}>{item} </li> }) : null}
-
-                    {/*{props.img.length > 0 ? props.img.map((item, index) => { return <amp-img key={index} src={item} layout="fixed" width="266" height="150"></amp-img> }) : null}*/}
-                </article>
-            );
-
-        }
-        const setExperiences = (props, index) => {
-
-            return (
-                <div>
-
-                    <h3>{props.position} <a target="_blank" href={props.link}>@{props.company}</a></h3>
+                <div key={index}>
+                    <h3>{props.title} {props.institution ? <a target="_blank" href={props.link}>@{props.institution}</a> : null}</h3>
                     <h4>{props.beginDate} - {props.endDate}</h4>
 
-
                     {props.content.length > 0 ? props.content.map((item, index) => { return <li key={index}>{Parser(item)} </li> }) : null}
-
-                    {/*{props.img.length > 0 ? props.img.map((item, index) => { return <amp-img key={index} src={item} layout="fixed" width="266" height="150"></amp-img> }) : null}*/}
                 </div>
             );
 
         }
+        // const setExperiences = (props, index) => {
+        //     return (
+        //         <div>
+        //             <h3>{props.position} <a target="_blank" href={props.link}>@{props.company}</a></h3>
+        //             {renderCommunContentDetail(props)}
+        //         </div>
+        //     );
+        // }
+
+        // const renderCommunContentDetail = props => {
+
+        //     return (
+        //         <div>
+        //             <h4>{props.beginDate} - {props.endDate}</h4>
+
+        //             {props.content.length > 0 ? props.content.map((item, index) => { return <li key={index}>{Parser(item)} </li> }) : null}
+        //         </div>
+        //     );
+        // }
 
         const props = this.props;
+        const estudies = props.estudies;
+        const experiences = props.experiences;
+
+        const content = [
+            props.experiences,
+            props.estudies
+            
+        ];
 
 
         return (
-            <main>
+            <main className="table">
                 {/*<div className="content">{thisIsMyCopy}</div>*/}
                 {/*<div className="content">{Parser(thisIsMyCopy)}</div>*/}
                 <aside className="aside-left-container">
@@ -71,23 +79,43 @@ class MinCV extends React.Component {
                         </div>
                     </div>
                 </aside>
-                <container className="main-right-section">
-                    {/*<h1 className="name">Croce</h1>*/}
-                    <section>
-                        <h2>Estudios</h2>
-                        {props.estudies.estudies.length > 0 ? props.estudies.estudies.map((item, index) => { return <article key={index}>{setEstudiesContent(item.details, index)}</article> }) : null}
-                    </section>
+                <section className="main-right-section">
 
-                    {props.experiences.experiences.length > 0 ?
+
+                    {content.map((data, index) => {
+                        return (
+                            data.list.length > 0 ?
+                                <section key={index} className="table">
+                                    <i className={data.generic.icon}></i>
+                                    <div className="container-detail">
+                                        <h2>{data.generic.title}</h2>
+                                        {data.list.map((item, index) => { return <article key={index}>{setContent(item.details, index)}</article> })}
+                                    </div>
+                                </section>
+                                : null
+                        );
+                    })}
+
+                    {/* {estudies.list.length > 0 ?
                         <section className="table">
-                            <i className={props.experiences.generic.icon}></i>
+                            <i className={estudies.generic.icon}></i>
                             <div className="container-detail">
-                                <h2>{props.experiences.generic.title}</h2>
-                                {props.experiences.experiences.map((item, index) => { return <article key={index}>{setExperiences(item.details, index)}</article> })}
+                                <h2>{estudies.generic.title}</h2>
+                                {estudies.list.map((item, index) => { return <article key={index}>{setEstudiesContent(item.details, index)}</article> })}
                             </div>
                         </section>
                         : null}
-                </container >
+
+                    {experiences.list.length > 0 ?
+                        <section className="table">
+                            <i className={experiences.generic.icon}></i>
+                            <div className="container-detail">
+                                <h2>{experiences.generic.title}</h2>
+                                {experiences.list.map((item, index) => { return <article key={index}>{setExperiences(item.details, index)}</article> })}
+                            </div>
+                        </section>
+                        : null} */}
+                </section >
             </main>
         );
     }
