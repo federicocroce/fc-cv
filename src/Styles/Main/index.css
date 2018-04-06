@@ -26,6 +26,8 @@ main {
   main .icon-them {
     position: fixed;
     z-index: 1; }
+    main .icon-them:hover {
+      cursor: pointer; }
   main.dark-them .aside-left-container {
     background: #191919; }
   main.dark-them .main-right-section {

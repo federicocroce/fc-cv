@@ -27,6 +27,9 @@ main {
     .icon-them {
         position: fixed;
         z-index: 1;
+        &:hover{
+            cursor: pointer;
+        }
     }
     &.dark-them {
         .aside-left-container {

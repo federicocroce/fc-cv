@@ -4,18 +4,19 @@
 import React from 'react';
 
 const data = {
-    list: []
+    list: [],
+    mainData: {}
 }
 
 
 const reducerPersonalData = (state = data, action) => {
     // console.error("ENTRA");
     switch (action.type) {
-        case 'FETCH_PERSONAL_DATA':
-           
+        case 'FETCH_PERSONAL_DATA':           
             return {
                 ...state,
-                list: action.payload.personalData
+                list: action.payload.personalData,
+                mainData: action.payload.mainData
             };
         case 'FETCH_TEXTO':
             return {

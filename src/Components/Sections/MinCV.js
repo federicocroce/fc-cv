@@ -32,7 +32,7 @@ class MinCV extends React.Component {
 
             return (
                 <div key={index}>
-                    <h3>{props.title} {props.institution ? <a target="_blank" href={props.link}>@{props.institution}</a> : null}</h3>
+                    <h3>{Parser(props.title)} {props.institution ? <a target="_blank" href={props.link}>@{Parser(props.institution)}</a> : null}</h3>
                     <h4>{props.beginDate} - {props.endDate}</h4>
 
                     {props.content.length > 0 ? props.content.map((item, index) => { return <li key={index}>{Parser(item)} </li> }) : null}
@@ -86,14 +86,19 @@ class MinCV extends React.Component {
                 {/*<div className="content">{Parser(thisIsMyCopy)}</div>*/}
                 <aside className="aside-left-container">
                     <i className='icon-them icon-brightness_medium' onClick={() => setThem()}></i>
-                    <div className="img-profile-container">
-                        <amp-img src='https://firebasestorage.googleapis.com/v0/b/test-74eeb.appspot.com/o/images%2Ffoto-cv.jpg?alt=media&token=2909595b-f623-4b24-a019-a488cbb06b25' layout="responsive" width="100" height="100"></amp-img>
-                        <img className="img-perfil" />
-                        <div className="content-img">
-                            <h1 className="name">Federico Croce</h1>
-                            <p>Front-End Develop</p>
+
+
+                    { Object.keys(personalData.mainData).length != 0 ?
+                        <div className="img-profile-container">
+                            <amp-img src={personalData.mainData.img} layout="responsive" width="100" height="100"></amp-img>
+                            <img className="img-perfil" />
+
+                            <div className="content-img">
+                                <h1 className="name">{personalData.mainData.name}</h1>
+                                <p>{personalData.mainData.position}</p>
+                            </div>
                         </div>
-                    </div>
+                        : null}
 
                     {personalData.list.length > 0 ?
                         <section>
@@ -102,8 +107,8 @@ class MinCV extends React.Component {
                                     <article key={index} className="table">
                                         <i className={data.icon}></i>
                                         <div className="container-detail">
-                                            <p>{data.content}</p>
-                                            <p>{data.subcontent}</p>
+                                            <p>{Parser(data.content)}</p>
+                                            <p>{Parser(data.subcontent)}</p>
                                         </div>
                                     </article>
                                 );
@@ -158,7 +163,7 @@ const mapStateToProps = (state) => {
     return {
         estudies: state.estudies,
         experiences: state.experiences,
-        personalData: state.personalData,
+        personalData: state.personalData
     };
 }
 

@@ -47,7 +47,7 @@ class testSection extends React.Component {
                 <amp-img src='https://firebasestorage.googleapis.com/v0/b/test-74eeb.appspot.com/o/images%2Fgoku.jpg?alt=media&token=f9ba91d0-f5bd-4e4b-93d2-153379bd5617' layout="fixed" width="266" height="150"></amp-img>
                 : null} */}
 
-                {props.state.collection.length > 0 ? props.state.collection.map((item, index) => { return <li key={index}>{setEstudiesContent(item.details, index)}</li> }) : null}
+                {props.state.list.length > 0 ? props.state.list.map((item, index) => { return <li key={index}>{setEstudiesContent(item.details, index)}</li> }) : null}
 
 
 
@@ -60,14 +60,14 @@ class testSection extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        state: state.test
+        state: state.estudies
     };
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         fetchObjects() {
-            React.actions.actionsTest.fetchObjects(dispatch)
+            React.actions.actionsEstudies.fetchObjects(dispatch)
         }
     };
 }
