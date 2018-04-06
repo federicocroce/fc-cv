@@ -23,6 +23,18 @@ main {
   min-height: 100vh;
   margin: 0 auto;
   padding: 3px; }
+  main .icon-them {
+    position: fixed;
+    z-index: 1; }
+  main.dark-them .aside-left-container {
+    background: #191919; }
+  main.dark-them .main-right-section {
+    color: #ffffff;
+    background: #424242; }
+    main.dark-them .main-right-section section {
+      background-color: #191919; }
+      main.dark-them .main-right-section section a, main.dark-them .main-right-section section h3 {
+        color: #ffffff; }
   main.table {
     max-width: 21cm;
     table-layout: fixed; }
@@ -32,6 +44,7 @@ main {
     min-height: 100vh;
     display: inline-block; }
   main .aside-left-container {
+    transition: all 0.3s ease;
     background: #3aa7de;
     color: #ffffff;
     width: 30%;
@@ -43,7 +56,7 @@ main {
       main .aside-left-container .img-profile-container .content-img {
         position: absolute;
         bottom: 15%;
-        right: 4%; }
+        right: 9%; }
         main .aside-left-container .img-profile-container .content-img h1 {
           font-size: 1.3em; }
         main .aside-left-container .img-profile-container .content-img p {
@@ -61,13 +74,16 @@ main {
       font-size: 1.3em;
       padding-right: 20px; }
   main .main-right-section {
+    transition: all 0.3s ease;
     background: #e3e3e3;
+    box-shadow: inset 5px 0px 11px rgba(0, 0, 0, 0.19);
     color: #737373;
     width: 70%;
     padding: 3%; }
     main .main-right-section h1.name {
       text-align: left; }
     main .main-right-section section {
+      transition: all 0.3s ease;
       background-color: #ffffff;
       margin: 6% 0;
       padding: 6% 0 6% 6%;

@@ -5,6 +5,8 @@
     text-decoration: none;
 }
 
+$time-transition: 0.3s;
+
 // section {
 //     background: $secondary-color-dark;
 //     min-height: 100vh;
@@ -21,6 +23,26 @@ body {
 }
 
 main {
+   
+    .icon-them {
+        position: fixed;
+        z-index: 1;
+    }
+    &.dark-them {
+        .aside-left-container {
+            background: $color-919;
+        }
+        .main-right-section {
+            color: $primary-color-text;
+            background: #424242;
+            section {
+                background-color: $color-919;
+                a,h3{
+                    color: $primary-color-text;
+                }
+            }
+        }
+    }
     &.table {
         max-width: 21cm;
         table-layout: fixed;
@@ -38,10 +60,11 @@ main {
         display: inline-block;
     }
     .aside-left-container {
+        transition: all $time-transition ease;
         background: $primary-color-light;
         color: $primary-color-text;
         width: 30%;
-        box-shadow: 0 1px 11px rgba(0,0,0,0.19), 0 2px 8px rgba(0,0,0,0.23);
+        box-shadow: 0 1px 11px rgba(0, 0, 0, 0.19), 0 2px 8px rgba(0, 0, 0, 0.23);
         // float: left;
         h1.name {
             text-align: right;
@@ -51,7 +74,7 @@ main {
             .content-img {
                 position: absolute;
                 bottom: 15%;
-                right: 4%;
+                right: 9%;
                 h1 {
                     font-size: 1.3em;
                 }
@@ -81,7 +104,9 @@ main {
         }
     }
     .main-right-section {
+        transition: all $time-transition ease;
         background: $secondary-color-light;
+        box-shadow: inset 5px 0px 11px rgba(0, 0, 0, 0.19);
         color: $grey-dark;
         width: 70%;
         padding: 3%; // padding: 4%;
@@ -89,10 +114,11 @@ main {
             text-align: left;
         }
         section {
+            transition: all $time-transition ease;
             background-color: $primary-color-text;
             margin: 6% 0;
             padding: 6% 0 6% 6%;
-            box-shadow: 0 1px 11px rgba(0,0,0,0.19), 0 2px 8px rgba(0,0,0,0.23);
+            box-shadow: 0 1px 11px rgba(0, 0, 0, 0.19), 0 2px 8px rgba(0, 0, 0, 0.23);
             [class^="icon-"] {
                 display: inline-block;
                 font-size: 2em;

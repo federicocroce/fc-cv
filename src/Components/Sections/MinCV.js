@@ -2,12 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Parser from 'html-react-parser';
+import classNames from 'classnames';
 
 
 class MinCV extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            darkThem: this.props.darkThem
+        };
     }
 
     componentDidMount() {
@@ -64,12 +69,23 @@ class MinCV extends React.Component {
 
         ];
 
+        const mainClass = classNames({
+            'table': true,
+            'dark-them': this.state.darkThem,
+        });
+
+        const setThem = () => {
+            this.setState({ darkThem: !this.state.darkThem })
+        }
+
 
         return (
-            <main className="table">
+
+            <main className={mainClass}>
                 {/*<div className="content">{thisIsMyCopy}</div>*/}
                 {/*<div className="content">{Parser(thisIsMyCopy)}</div>*/}
                 <aside className="aside-left-container">
+                    <i className='icon-them icon-brightness_medium' onClick={() => setThem()}></i>
                     <div className="img-profile-container">
                         <amp-img src='https://firebasestorage.googleapis.com/v0/b/test-74eeb.appspot.com/o/images%2Ffoto-cv.jpg?alt=media&token=2909595b-f623-4b24-a019-a488cbb06b25' layout="responsive" width="100" height="100"></amp-img>
                         <img className="img-perfil" />
