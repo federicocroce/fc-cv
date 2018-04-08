@@ -19,6 +19,7 @@ body {
   font-size: 16px; }
 
 main {
+  position: relative;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   min-height: 100vh;
   margin: 0 auto;
@@ -35,7 +36,8 @@ main {
     background: #424242; }
     main.dark-them .main-right-section section {
       background-color: #191919; }
-      main.dark-them .main-right-section section a, main.dark-them .main-right-section section h3 {
+      main.dark-them .main-right-section section a,
+      main.dark-them .main-right-section section h3 {
         color: #ffffff; }
   main.table {
     max-width: 21cm;
@@ -63,14 +65,17 @@ main {
           font-size: 1.3em; }
         main .aside-left-container .img-profile-container .content-img p {
           font-size: 0.8em; }
-    main .aside-left-container article {
-      padding: 8% 0 8% 8%; }
-      main .aside-left-container article p {
+    main .aside-left-container .container-detail-personal-data {
+      color: #ffffff;
+      padding: 0 0 8% 8%; }
+      main .aside-left-container .container-detail-personal-data p {
         font-size: 0.7em; }
-      main .aside-left-container article > div {
+      main .aside-left-container .container-detail-personal-data > div {
         width: 85%;
         border-bottom: 1px solid #398aca;
         padding: 0 8% 8% 0; }
+      main .aside-left-container .container-detail-personal-data:first-of-type {
+        padding-top: 8%; }
     main .aside-left-container [class^="icon-"] {
       display: inline-block;
       font-size: 1.3em;
@@ -124,3 +129,12 @@ main {
         margin-bottom: 0; }
     main .main-right-section .container-detail {
       padding-left: 10px; }
+
+@media (max-width: 21cm) {
+  main.table > * {
+    display: block;
+    width: 100%; }
+  main .aside-left-container .container-detail-personal-data {
+    padding: 0 0 4% 4%; }
+    main .aside-left-container .container-detail-personal-data > div {
+      padding: 0 4% 4% 0; } }

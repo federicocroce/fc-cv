@@ -6,7 +6,6 @@
 }
 
 $time-transition: 0.3s;
-
 // section {
 //     background: $secondary-color-dark;
 //     min-height: 100vh;
@@ -23,11 +22,10 @@ body {
 }
 
 main {
-   
     .icon-them {
         position: fixed;
         z-index: 1;
-        &:hover{
+        &:hover {
             cursor: pointer;
         }
     }
@@ -40,7 +38,8 @@ main {
             background: #424242;
             section {
                 background-color: $color-919;
-                a,h3{
+                a,
+                h3 {
                     color: $primary-color-text;
                 }
             }
@@ -50,6 +49,7 @@ main {
         max-width: 21cm;
         table-layout: fixed;
     }
+    position: relative;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
     0 6px 6px rgba(0, 0, 0, 0.23);
     min-height: 100vh;
@@ -67,8 +67,7 @@ main {
         background: $primary-color-light;
         color: $primary-color-text;
         width: 30%;
-        box-shadow: 0 1px 11px rgba(0, 0, 0, 0.19), 0 2px 8px rgba(0, 0, 0, 0.23);
-        // float: left;
+        box-shadow: 0 1px 11px rgba(0, 0, 0, 0.19), 0 2px 8px rgba(0, 0, 0, 0.23); // float: left;
         h1.name {
             text-align: right;
         }
@@ -86,8 +85,9 @@ main {
                 }
             }
         }
-        article {
-            padding: 8% 0 8% 8%;
+        .container-detail-personal-data {
+            color: $primary-color-text;
+            padding: 0 0 8% 8%;
             p {
                 font-size: 0.7em;
             }
@@ -96,7 +96,9 @@ main {
                 border-bottom: 1px solid $color-aca;
                 padding: 0 8% 8% 0;
             }
-            // div:last-of-type {
+            &:first-of-type {
+                padding-top: 8%;
+            } // div:last-of-type {
             //     border-bottom: none;
             // }
         }
@@ -167,6 +169,25 @@ main {
         }
         .container-detail {
             padding-left: 10px;
+        }
+    }
+}
+
+@media (max-width: 21cm) {
+    main {
+        &.table {
+            >* {
+                display: block;
+                width: 100%;
+            }
+        }
+        .aside-left-container {
+            .container-detail-personal-data {
+                padding: 0 0 4% 4%;
+                &> div{
+                    padding: 0 4% 4% 0
+                }
+            }
         }
     }
 }

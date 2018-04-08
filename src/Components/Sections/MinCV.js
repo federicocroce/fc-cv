@@ -88,11 +88,9 @@ class MinCV extends React.Component {
                     <i className='icon-them icon-brightness_medium' onClick={() => setThem()}></i>
 
 
-                    { Object.keys(personalData.mainData).length != 0 ?
+                    {Object.keys(personalData.mainData).length != 0 ?
                         <div className="img-profile-container">
                             <amp-img src={personalData.mainData.img} layout="responsive" width="100" height="100"></amp-img>
-                            <img className="img-perfil" />
-
                             <div className="content-img">
                                 <h1 className="name">{personalData.mainData.name}</h1>
                                 <p>{personalData.mainData.position}</p>
@@ -100,17 +98,19 @@ class MinCV extends React.Component {
                         </div>
                         : null}
 
+
+
                     {personalData.list.length > 0 ?
                         <section>
                             {personalData.list.map((data, index) => {
                                 return (
-                                    <article key={index} className="table">
+                                    <a href={data.link} key={index} className="container-detail-personal-data table">
                                         <i className={data.icon}></i>
                                         <div className="container-detail">
                                             <p>{Parser(data.content)}</p>
                                             <p>{Parser(data.subcontent)}</p>
                                         </div>
-                                    </article>
+                                    </a>
                                 );
                             })}
                         </section>
