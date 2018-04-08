@@ -86,7 +86,7 @@ fireStoreApp.fetchObjects = (collection, dispatch, action) => {
 
 
 
-fireStoreApp.create = (collection, document) => {
+fireStoreApp.createAutoID = (collection, document) => {
   db.collection(collection).add(document)
     .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);

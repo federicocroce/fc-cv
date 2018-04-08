@@ -82,10 +82,12 @@ class MinCV extends React.Component {
         return (
 
             <main className={mainClass}>
+
                 {/*<div className="content">{thisIsMyCopy}</div>*/}
                 {/*<div className="content">{Parser(thisIsMyCopy)}</div>*/}
                 <aside className="aside-left-container">
                     <i className='icon-them icon-brightness_medium' onClick={() => setThem()}></i>
+
 
 
                     {Object.keys(personalData.mainData).length != 0 ?
@@ -119,12 +121,13 @@ class MinCV extends React.Component {
 
                 </aside>
                 <section className="main-right-section">
-
+                    <i className='icon-brightness_medium' onClick={() => this.props.createExperiences()}></i>
                     {content.map((data, index) => {
                         return (
                             data.list.length > 0 ?
                                 <section key={index} className="table">
                                     <i className={data.generic.icon}></i>
+
                                     <div className="container-detail">
                                         <h2>{data.generic.title}</h2>
                                         {data.list.map((item, index) => { return <article key={index}>{setContent(item.details, index)}</article> })}
@@ -174,6 +177,9 @@ const mapDispatchToProps = dispatch => {
         },
         fetchExperiences() {
             React.actions.actionsExperiences.fetchObjects(dispatch)
+        },
+        createExperiences() {
+            React.actions.actionsExperiences.createAutoID()
         },
         fetchPersonalData() {
             React.actions.actionsPersonalData.fetchObjects(dispatch)
