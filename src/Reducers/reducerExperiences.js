@@ -21,15 +21,13 @@ const reducerExperiences = (state = data, action) => {
                 if (data.type != "generic") {
                     list.push(data);
                 }
-                else{
+                else {
                     generic = data;
                 }
             });
 
+            list.sort((a, b) => b.details.id - a.details.id);
 
-            // if (action.payload.type != "generic") {
-            //     list.push(action.payload);
-            // }
 
             return {
                 ...state,

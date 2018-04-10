@@ -75,8 +75,9 @@ main {
             position: relative;
             .content-img {
                 position: absolute;
-                bottom: 15%;
+                bottom: 8%;
                 right: 9%;
+                max-width: 156px;
                 h1 {
                     font-size: 1.3em;
                 }
@@ -134,25 +135,36 @@ main {
             a,
             p,
             span {
-                line-height: 2em;
+                line-height: 1.4em;
             }
             h2 {
                 display: inline-block;
-                line-height: 37px;
+                // line-height: 2em;
             }
             h3,
             a {
                 font-size: 1em;
                 color: $grey-dark;
-                line-height: 1em;
+                // line-height: 1em;
             }
             h4 {
                 color: $color-1e0;
+                font-size: 0.7em;
+                text-transform: uppercase;
+                line-height: 2em;
+            }
+            li {
+                list-style-type: none;
+                line-height: 1.4em;
+                margin-top: 10px;
                 font-size: 0.8em;
+                // &:last-of-type {
+                //     margin: 0;
+                // }
             }
             article {
                 padding: 15px 0;
-                border-bottom: 1px solid $grey-dark;
+                border-bottom: 1px solid $secondary-color-light;
                 &:last-of-type {
                     border-bottom: none;
                 }
@@ -184,7 +196,7 @@ main {
         .aside-left-container {
             .container-detail-personal-data {
                 padding: 0 0 4% 4%;
-                &> div{
+                &>div {
                     padding: 0 4% 4% 0
                 }
             }

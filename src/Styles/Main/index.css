@@ -59,8 +59,9 @@ main {
       position: relative; }
       main .aside-left-container .img-profile-container .content-img {
         position: absolute;
-        bottom: 15%;
-        right: 9%; }
+        bottom: 8%;
+        right: 9%;
+        max-width: 156px; }
         main .aside-left-container .img-profile-container .content-img h1 {
           font-size: 1.3em; }
         main .aside-left-container .img-profile-container .content-img p {
@@ -104,21 +105,26 @@ main {
       main .main-right-section section a,
       main .main-right-section section p,
       main .main-right-section section span {
-        line-height: 2em; }
+        line-height: 1.4em; }
       main .main-right-section section h2 {
-        display: inline-block;
-        line-height: 37px; }
+        display: inline-block; }
       main .main-right-section section h3,
       main .main-right-section section a {
         font-size: 1em;
-        color: #737373;
-        line-height: 1em; }
+        color: #737373; }
       main .main-right-section section h4 {
         color: #6eb1e0;
+        font-size: 0.7em;
+        text-transform: uppercase;
+        line-height: 2em; }
+      main .main-right-section section li {
+        list-style-type: none;
+        line-height: 1.4em;
+        margin-top: 10px;
         font-size: 0.8em; }
       main .main-right-section section article {
         padding: 15px 0;
-        border-bottom: 1px solid #737373; }
+        border-bottom: 1px solid #e3e3e3; }
         main .main-right-section section article:last-of-type {
           border-bottom: none; }
         main .main-right-section section article div {

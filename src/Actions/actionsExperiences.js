@@ -7,8 +7,9 @@ const actions = {};
 
 const document = {
     details:{
-        beginDate: "2012",
-        company: "Shadow",
+        id: 0,
+        beginDate: "2018",
+        endDate: "actualmente",
         content:[
             'asd',
             'mas asd'
