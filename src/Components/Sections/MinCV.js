@@ -80,21 +80,16 @@ class MinCV extends React.Component {
             this.setState({ darkThem: !this.state.darkThem })
         }
 
-
         return (
 
             <div className="app-container">
                 <main className={mainClass}>
-
                     {/*<div className="content">{thisIsMyCopy}</div>*/}
                     {/*<div className="content">{Parser(thisIsMyCopy)}</div>*/}
                     <aside className="aside-left-container">
-                        <i className='icon-them icon-brightness_medium' onClick={() => setThem()}></i>
-
-
-
                         {Object.keys(personalData.mainData).length != 0 ?
                             <div className="img-profile-container">
+                                {/*<img src={personalData.mainData.img}></img>*/}
                                 <amp-img src={personalData.mainData.img} layout="responsive" width="100" height="100"></amp-img>
                                 <div className="content-img">
                                     <h1 className="name">{personalData.mainData.name}</h1>
@@ -124,6 +119,11 @@ class MinCV extends React.Component {
 
                     </aside>
                     <section className="main-right-section">
+                        <header>
+                            <i className='icon-them icon-brightness_medium' onClick={() => setThem()}></i>
+                            <i className="icon-print" onClick={() => window.print()}></i>
+                        </header>
+
                         <i className='icon-add' onClick={() => this.props.createExperiences()}></i>
                         {content.map((data, index) => {
                             return (
@@ -149,7 +149,7 @@ class MinCV extends React.Component {
                             {footer.list.map((data, index) => {
                                 return (
                                     <a target="_blank" href={data.link} key={index} className="img-tecnologies">
-                                    <amp-img src={data.img} width="70" height="70"></amp-img>
+                                        <amp-img src={data.img} width="40" height="40"></amp-img>
                                     </a>
                                 );
                             })}
