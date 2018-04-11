@@ -124,7 +124,7 @@ class MinCV extends React.Component {
 
                     </aside>
                     <section className="main-right-section">
-                        <i className='icon-brightness_medium' onClick={() => this.props.createExperiences()}></i>
+                        <i className='icon-add' onClick={() => this.props.createExperiences()}></i>
                         {content.map((data, index) => {
                             return (
                                 data.list.length > 0 ?

@@ -39,6 +39,9 @@ body {
   .app-container main.dark-them .main-right-section {
     color: #ffffff;
     background: #424242; }
+    .app-container main.dark-them .main-right-section > i {
+      position: absolute;
+      right: 5%; }
     .app-container main.dark-them .main-right-section section {
       background-color: #191919; }
       .app-container main.dark-them .main-right-section section a,
@@ -88,7 +91,11 @@ body {
     box-shadow: inset 5px 0px 11px rgba(0, 0, 0, 0.19);
     color: #737373;
     width: 70%;
-    padding: 3%; }
+    padding: 3%;
+    position: relative; }
+    .app-container main .main-right-section > i {
+      position: absolute;
+      right: 5%; }
     .app-container main .main-right-section h1.name {
       text-align: left; }
     .app-container main .main-right-section section {
