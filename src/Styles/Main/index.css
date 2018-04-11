@@ -185,9 +185,12 @@ header {
         display: table-cell;
         width: 100%; }
     .app-container .main-right-section {
+      width: 70% !important;
       padding: 3% !important; }
-    .app-container .aside-left-container .container-detail-personal-data .container-detail {
-      width: 85%; }
+    .app-container .aside-left-container {
+      width: 30% !important; }
+      .app-container .aside-left-container .container-detail-personal-data .container-detail {
+        width: 85%; }
   header {
     display: none; }
   @page {
