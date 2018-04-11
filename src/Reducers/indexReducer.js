@@ -10,6 +10,7 @@ import { user } from './usersReducer';
 import { reducerEstudies as estudies } from './reducerEstudies';
 import { reducerExperiences as experiences } from './reducerExperiences';
 import { reducerPersonalData as personalData } from './reducerPersonalData';
+import { reducerFooter as footer } from './reducerFooter';
 
 
 const allReducers = {
@@ -20,6 +21,7 @@ const allReducers = {
     experiences,
     estudies,
     personalData,
+    footer,
     // form:reduxFormReducer,
     router: routerReducer
 }

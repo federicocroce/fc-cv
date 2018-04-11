@@ -18,129 +18,145 @@ body {
 body {
   font-size: 16px; }
 
-main {
+.app-container {
   position: relative;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   min-height: 100vh;
   margin: 0 auto;
-  padding: 3px; }
-  main .icon-them {
+  padding: 3px;
+  max-width: 21cm; }
+  .app-container h1 {
+    font-size: 1.5em; }
+  .app-container > * {
+    min-height: 100vh; }
+  .app-container main .icon-them {
     position: fixed;
     z-index: 1; }
-    main .icon-them:hover {
+    .app-container main .icon-them:hover {
       cursor: pointer; }
-  main.dark-them .aside-left-container {
+  .app-container main.dark-them .aside-left-container {
     background: #191919; }
-  main.dark-them .main-right-section {
+  .app-container main.dark-them .main-right-section {
     color: #ffffff;
     background: #424242; }
-    main.dark-them .main-right-section section {
+    .app-container main.dark-them .main-right-section section {
       background-color: #191919; }
-      main.dark-them .main-right-section section a,
-      main.dark-them .main-right-section section h3 {
+      .app-container main.dark-them .main-right-section section a,
+      .app-container main.dark-them .main-right-section section h3 {
         color: #ffffff; }
-  main.table {
-    max-width: 21cm;
+  .app-container main.table {
     table-layout: fixed; }
-  main h1 {
-    font-size: 1.5em; }
-  main > * {
-    min-height: 100vh;
-    display: inline-block; }
-  main .aside-left-container {
+  .app-container main .aside-left-container {
     transition: all 0.3s ease;
-    background: #3aa7de;
+    background: #01579b;
     color: #ffffff;
     width: 30%;
     box-shadow: 0 1px 11px rgba(0, 0, 0, 0.19), 0 2px 8px rgba(0, 0, 0, 0.23); }
-    main .aside-left-container h1.name {
+    .app-container main .aside-left-container h1.name {
       text-align: right; }
-    main .aside-left-container .img-profile-container {
+    .app-container main .aside-left-container .img-profile-container {
       position: relative; }
-      main .aside-left-container .img-profile-container .content-img {
+      .app-container main .aside-left-container .img-profile-container .content-img {
         position: absolute;
         bottom: 8%;
         right: 9%;
         max-width: 156px; }
-        main .aside-left-container .img-profile-container .content-img h1 {
+        .app-container main .aside-left-container .img-profile-container .content-img h1 {
           font-size: 1.3em; }
-        main .aside-left-container .img-profile-container .content-img p {
+        .app-container main .aside-left-container .img-profile-container .content-img p {
           font-size: 0.8em; }
-    main .aside-left-container .container-detail-personal-data {
+    .app-container main .aside-left-container .container-detail-personal-data {
       color: #ffffff;
       padding: 0 0 8% 8%; }
-      main .aside-left-container .container-detail-personal-data p {
+      .app-container main .aside-left-container .container-detail-personal-data p {
         font-size: 0.7em; }
-      main .aside-left-container .container-detail-personal-data > div {
+      .app-container main .aside-left-container .container-detail-personal-data > div {
         width: 85%;
         border-bottom: 1px solid #398aca;
         padding: 0 8% 8% 0; }
-      main .aside-left-container .container-detail-personal-data:first-of-type {
+      .app-container main .aside-left-container .container-detail-personal-data:first-of-type {
         padding-top: 8%; }
-    main .aside-left-container [class^="icon-"] {
+    .app-container main .aside-left-container [class^="icon-"] {
       display: inline-block;
       font-size: 1.3em;
       padding-right: 20px; }
-  main .main-right-section {
+  .app-container main .main-right-section {
     transition: all 0.3s ease;
     background: #e3e3e3;
     box-shadow: inset 5px 0px 11px rgba(0, 0, 0, 0.19);
     color: #737373;
     width: 70%;
     padding: 3%; }
-    main .main-right-section h1.name {
+    .app-container main .main-right-section h1.name {
       text-align: left; }
-    main .main-right-section section {
+    .app-container main .main-right-section section {
       transition: all 0.3s ease;
       background-color: #ffffff;
       margin: 6% 0;
       padding: 6% 0 6% 6%;
       box-shadow: 0 1px 11px rgba(0, 0, 0, 0.19), 0 2px 8px rgba(0, 0, 0, 0.23); }
-      main .main-right-section section [class^="icon-"] {
+      .app-container main .main-right-section section [class^="icon-"] {
         display: inline-block;
         font-size: 2em; }
-      main .main-right-section section h2,
-      main .main-right-section section h3,
-      main .main-right-section section h4,
-      main .main-right-section section a,
-      main .main-right-section section p,
-      main .main-right-section section span {
+      .app-container main .main-right-section section h2,
+      .app-container main .main-right-section section h3,
+      .app-container main .main-right-section section h4,
+      .app-container main .main-right-section section a,
+      .app-container main .main-right-section section p,
+      .app-container main .main-right-section section span {
         line-height: 1.4em; }
-      main .main-right-section section h2 {
+      .app-container main .main-right-section section h2 {
         display: inline-block; }
-      main .main-right-section section h3,
-      main .main-right-section section a {
+      .app-container main .main-right-section section h3,
+      .app-container main .main-right-section section a {
         font-size: 1em;
         color: #737373; }
-      main .main-right-section section h4 {
+      .app-container main .main-right-section section h4 {
         color: #6eb1e0;
         font-size: 0.7em;
         text-transform: uppercase;
         line-height: 2em; }
-      main .main-right-section section li {
+      .app-container main .main-right-section section li {
         list-style-type: none;
         line-height: 1.4em;
         margin-top: 10px;
         font-size: 0.8em; }
-      main .main-right-section section article {
+      .app-container main .main-right-section section article {
         padding: 15px 0;
         border-bottom: 1px solid #e3e3e3; }
-        main .main-right-section section article:last-of-type {
+        .app-container main .main-right-section section article:last-of-type {
           border-bottom: none; }
-        main .main-right-section section article div {
+        .app-container main .main-right-section section article div {
           padding-right: 5%; }
-      main .main-right-section section:first-of-type {
+      .app-container main .main-right-section section:first-of-type {
         margin-top: 0; }
-      main .main-right-section section:last-of-type {
+      .app-container main .main-right-section section:last-of-type {
         margin-bottom: 0; }
-    main .main-right-section .container-detail {
+    .app-container main .main-right-section .container-detail {
       padding-left: 10px; }
+  .app-container .container-footer {
+    min-height: 60px;
+    background: #002f6e;
+    padding: 2% 10%;
+    text-align: center; }
+    .app-container .container-footer .img-tecnologies {
+      filter: grayscale(95%);
+      transition: all 0.3s ease;
+      margin: 10px;
+      display: inline-block; }
+      .app-container .container-footer .img-tecnologies:hover {
+        filter: grayscale(0%);
+        cursor: pointer; }
 
 @media (max-width: 21cm) {
-  main.table > * {
-    display: block;
+  .app-container {
     width: 100%; }
-  main .aside-left-container .container-detail-personal-data {
-    padding: 0 0 4% 4%; }
-    main .aside-left-container .container-detail-personal-data > div {
-      padding: 0 4% 4% 0; } }
+    .app-container main.table {
+      width: 100%; }
+      .app-container main.table > * {
+        display: block;
+        width: 100%; }
+    .app-container .aside-left-container .container-detail-personal-data {
+      padding: 0 0 4% 4%; }
+      .app-container .aside-left-container .container-detail-personal-data > div {
+        padding: 0 4% 4% 0; } }
