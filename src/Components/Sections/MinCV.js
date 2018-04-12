@@ -194,8 +194,8 @@ const mapDispatchToProps = dispatch => {
         createExperiences() {
             React.actions.actionsExperiences.createAutoID()
         },
-        removeExperiences() {
-            React.actions.actionsExperiences.removeItem()
+        removeExperiences(id) {
+            React.actions.actionsExperiences.removeItem(id)
         },
         fetchPersonalData() {
             React.actions.actionsPersonalData.fetchObjects(dispatch)
