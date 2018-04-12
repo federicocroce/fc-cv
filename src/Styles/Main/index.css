@@ -206,7 +206,7 @@ header {
       width: 30% !important; }
       .app-container .aside-left-container .container-detail-personal-data .container-detail {
         width: 85%; }
-  header {
+  header, .actions-item {
     display: none; }
   @page {
     margin: 0; } }
