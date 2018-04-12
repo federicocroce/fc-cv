@@ -65,6 +65,13 @@ class MinCV extends React.Component {
         const personalData = props.personalData;
         const footer = props.footer;
 
+        props.experiences.createItem =  this.props.createExperiences;
+        props.estudies.createItem =  this.props.createEstudies;
+
+
+        // props.experiences.createItem = () => console.log('Exp');
+        // props.estudies.createItem = () => console.log('Est');
+
         const content = [
             props.experiences,
             props.estudies
@@ -124,12 +131,13 @@ class MinCV extends React.Component {
                             <i className="icon-print" onClick={() => window.print()}></i>
                         </header>
 
-                        <i className='icon-add' onClick={() => this.props.createExperiences()}></i>
                         {content.map((data, index) => {
                             return (
                                 data.list.length > 0 ?
                                     <section key={index} className="table">
                                         <i className={data.generic.icon}></i>
+
+                                        <i className='icon-add add-item' onClick={() => data.createItem()}></i>
 
                                         <div className="container-detail">
                                             <h2>{data.generic.title}</h2>
@@ -184,6 +192,9 @@ const mapDispatchToProps = dispatch => {
         },
         fetchPersonalData() {
             React.actions.actionsPersonalData.fetchObjects(dispatch)
+        },
+        createEstudies() {
+            React.actions.actionsEstudies.createAutoID()
         },
         fetchFooter() {
             React.actions.actionsFooter.fetchObjects(dispatch)

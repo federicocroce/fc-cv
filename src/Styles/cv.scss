@@ -4,9 +4,8 @@
         box-sizing: border-box;
         text-decoration: none;
     }
-    
-    $time-transition: 0.3s;
-    // section {
+
+    $time-transition: 0.3s; // section {
     //     background: $secondary-color-dark;
     //     min-height: 100vh;
     //     padding: 20px 10%;
@@ -20,7 +19,7 @@
         //     text-align: justify;
         // }
     }
-    
+
     .app-container {
         position: relative;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -116,10 +115,6 @@
                 width: 70%;
                 padding: 0 3% 3% 3%; // padding: 4%;
                 position: relative;
-                &>i {
-                    position: absolute;
-                    right: 5%;
-                }
                 h1.name {
                     text-align: left;
                 }
@@ -129,9 +124,16 @@
                     margin: 6% 0;
                     padding: 6% 0 6% 6%;
                     box-shadow: 0 1px 11px rgba(0, 0, 0, 0.19), 0 2px 8px rgba(0, 0, 0, 0.23);
+                    position: relative;
                     [class^="icon-"] {
                         display: inline-block;
                         font-size: 2em;
+                    }
+                    i.add-item {
+                        position: absolute;
+                        right: 2%;
+                        font-size: 1em;
+                        top: 1%;
                     }
                     h2,
                     h3,
@@ -202,7 +204,7 @@
             }
         }
     }
-    
+
     header {
         margin: 1% 0;
         text-align: right;
@@ -214,9 +216,7 @@
                 cursor: pointer;
             }
         }
-    }
-    
-    // .print {
+    } // .print {
     //     color: red;
     //     position: absolute;
     //     right: 10px;
@@ -245,7 +245,7 @@
             }
         }
     }
-    
+
     @media print {
         .app-container {
             width: 21cm;
@@ -258,7 +258,7 @@
                     width: 100%;
                 }
             }
-            .main-right-section{
+            .main-right-section {
                 width: 70% !important;
                 padding: 3% !important;
             }

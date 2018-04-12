@@ -83,8 +83,46 @@ fireStoreApp.fetchObjects = (collection, dispatch, action) => {
 //   });
 // };
 
+// fireStoreApp.removeItem = (collection) => {
+//   db.collection(collection)
+//     .get()
+//     .then(function (querySnapshot) {
+//       querySnapshot.forEach(function (doc) {
+
+//         const algo = 1;
+//         if (doc.data().details && doc.data().details.type != "generic") {
+//           if (doc.data().details.institution == 'Sarasa') {
+//             // console.log(doc.data());
+//             db.collection(collection).doc(doc.id).delete().then(function () {
+//               console.log("Document successfully deleted!");
+//             }).catch(function (error) {
+//               console.error("Error removing document: ", error);
+//             });
+//           }
+//         }
+//         else {
+//           console.log(doc.data());
+//         }
+//       });
+//     })
+//     .catch(function (error) {
+//       console.log("Error getting documents: ", error);
+//     });
+
+// }
+
+// fireStoreApp.removeItem('experiences');
 
 
+fireStoreApp.createAutoID = (collection, document) => {
+  db.collection(collection).add(document)
+    .then(function (docRef) {
+      console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function (error) {
+      console.error("Error adding document: ", error);
+    });
+}
 
 fireStoreApp.createAutoID = (collection, document) => {
   db.collection(collection).add(document)
