@@ -22,6 +22,7 @@ const document = {
 }
 
 actions.fetchObjects = dispatch => React.config.fireStoreApp.fetchObjects(collection, dispatch, 'FETCH_ESTUDIES');
-actions.createAutoID = dispatch => React.config.fireStoreApp.createAutoID(collection, document);
+actions.createAutoID = () => React.config.fireStoreApp.createAutoID(collection, document);
+actions.removeItem = id => React.config.fireStoreApp.removeItem(collection, id);
 
 export default actions;

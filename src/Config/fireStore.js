@@ -59,8 +59,11 @@ fireStoreApp.fetchObjects = (collection, dispatch, action) => {
 
     const array = [];
     snapshot.forEach((doc) => {
-      array.push(doc.data());
-      // });
+
+      const newDoc = doc.data();
+      newDoc.id = doc.id;
+      array.push(newDoc);
+
     });
     dispatch({
       type: action,
@@ -68,6 +71,16 @@ fireStoreApp.fetchObjects = (collection, dispatch, action) => {
     });
   });
 };
+
+fireStoreApp.removeItem = (collection, id) => {
+  db.collection(collection).doc(id).delete().then(function () {
+    console.log("Document successfully deleted!");
+  }).catch(function (error) {
+    console.error("Error removing document: ", error);
+  });
+}
+
+
 
 
 

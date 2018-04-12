@@ -29,14 +29,16 @@ class MinCV extends React.Component {
     render() {
 
 
-        const setContent = (props, index) => {
+        const setContent = (props, removeItem) => {
 
             return (
-                <div key={index}>
-                    <h3>{Parser(props.title)} {props.institution ? <a target="_blank" href={props.link}>@{Parser(props.institution)}</a> : null}</h3>
-                    <h4>{props.beginDate} - {props.endDate}</h4>
+                <div>
+                    <i className='icon-delete actions-item remove-icon' onClick={() => removeItem(props.id)}></i>
+                    <h3>{Parser(props.details.title)} {props.details.institution ? <a target="_blank" href={props.details.link}>@{Parser(props.details.institution)}</a> : null}</h3>
+                    <h4>{props.details.beginDate} - {props.details.endDate}</h4>
+                    <span>{props.id}</span>
 
-                    {props.content.length > 0 ? props.content.map((item, index) => { return <li key={index}>{Parser(item)} </li> }) : null}
+                    {props.details.content.length > 0 ? props.details.content.map((item, index) => { return <li key={index}>{Parser(item)} </li> }) : null}
                 </div>
             );
 
@@ -65,8 +67,11 @@ class MinCV extends React.Component {
         const personalData = props.personalData;
         const footer = props.footer;
 
-        props.experiences.createItem =  this.props.createExperiences;
-        props.estudies.createItem =  this.props.createEstudies;
+        props.experiences.createItem = this.props.createExperiences;
+        props.experiences.removeItem = this.props.removeExperiences;
+
+        props.estudies.createItem = this.props.createEstudies;
+        props.estudies.removeItem = this.props.removeEstudies;
 
 
         // props.experiences.createItem = () => console.log('Exp');
@@ -137,11 +142,11 @@ class MinCV extends React.Component {
                                     <section key={index} className="table">
                                         <i className={data.generic.icon}></i>
 
-                                        <i className='icon-add add-item' onClick={() => data.createItem()}></i>
+                                        <i className='icon-playlist_add actions-item add-icon' onClick={() => data.createItem()}></i>
 
                                         <div className="container-detail">
                                             <h2>{data.generic.title}</h2>
-                                            {data.list.map((item, index) => { return <article key={index}>{setContent(item.details, index)}</article> })}
+                                            {data.list.map((item, index) => { return <article key={index}>{setContent(item, data.removeItem)}</article> })}
                                         </div>
                                     </section>
                                     : null
@@ -190,11 +195,17 @@ const mapDispatchToProps = dispatch => {
         createExperiences() {
             React.actions.actionsExperiences.createAutoID()
         },
+        removeExperiences() {
+            React.actions.actionsExperiences.removeItem()
+        },
         fetchPersonalData() {
             React.actions.actionsPersonalData.fetchObjects(dispatch)
         },
         createEstudies() {
             React.actions.actionsEstudies.createAutoID()
+        },
+        removeEstudies(id) {
+            React.actions.actionsEstudies.removeItem(id)
         },
         fetchFooter() {
             React.actions.actionsFooter.fetchObjects(dispatch)
