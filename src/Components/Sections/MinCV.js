@@ -16,8 +16,9 @@ class MinCV extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.clear();
-        // if (this.props.user.list.length == 0)
+
+        this.props.onAuthStateChanged();
+
         this.props.fetchEstudies();
         this.props.fetchExperiences();
         this.props.fetchPersonalData();
@@ -133,6 +134,7 @@ class MinCV extends React.Component {
                         <header>
                             <i className='icon-them icon-brightness_medium' onClick={() => setThem()}></i>
                             <i className="icon-print" onClick={() => window.print()}></i>
+                            <i className="icon-person" onClick={() => props.hadleAuth()}></i>
                         </header>
 
                         {content.map((data, index) => {
@@ -208,6 +210,12 @@ const mapDispatchToProps = dispatch => {
         },
         fetchFooter() {
             React.actions.actionsFooter.fetchObjects(dispatch)
+        },
+        hadleAuth() {
+            React.actions.actionsLogin.hadleAuth(dispatch)
+        },
+        onAuthStateChanged() {
+            React.actions.actionsLogin.onAuthStateChanged(dispatch)
         }
     };
 }

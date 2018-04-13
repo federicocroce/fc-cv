@@ -5,6 +5,8 @@ require("firebase/firestore");
 const fireStoreApp = {};
 
 
+
+
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyDINSbmIwTdqRE7yDhkow46fs3JxW5y8KM",
@@ -81,8 +83,39 @@ fireStoreApp.removeItem = (collection, id) => {
 }
 
 
+fireStoreApp.hadleAuth = (dispatch) => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  firebase.auth().signInWithPopup(provider).then(function (result) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    // ...
+  }).catch(function (error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
+}
 
 
+fireStoreApp.onAuthStateChanged = () => {
+  firebase.auth().onAuthStateChanged(user => {
+    if(user){
+      console.log(user);
+    }
+    else{
+      console.log('No esta logeado');
+    }
+
+  });
+};
 
 
 // fireStoreApp.fetchObjects = (collection, dispatch, action) => {
