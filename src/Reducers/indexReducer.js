@@ -6,7 +6,7 @@ import { routerReducer } from "react-router-redux";
 import { posts } from './postsReducer';
 import { maps } from './gMapsReducer';
 // import { user } from './userReducer';
-import { user } from './usersReducer';
+// import { user } from './usersReducer';
 import { reducerEstudies as estudies } from './reducerEstudies';
 import { reducerExperiences as experiences } from './reducerExperiences';
 import { reducerPersonalData as personalData } from './reducerPersonalData';
@@ -15,10 +15,10 @@ import { reducerLogin as login } from './reducerLogin';
 
 
 const allReducers = {
-    posts,
-    maps,
+    // posts,
+    // maps,
     // user,
-    user,
+    // user,
     experiences,
     estudies,
     personalData,

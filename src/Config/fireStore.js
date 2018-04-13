@@ -83,14 +83,22 @@ fireStoreApp.removeItem = (collection, id) => {
 }
 
 
-fireStoreApp.hadleAuth = (dispatch) => {
+fireStoreApp.hadleAuth = (dispatch, action) => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
   firebase.auth().signInWithPopup(provider).then(function (result) {
     // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
+    const login = {
+      user: result.user,
+      loginState: true
+    }
+    dispatch({
+      type: action,
+      payload: login
+    });
+    // var token = result.credential.accessToken;
+    // // The signed-in user info.
+    // var user = result.user;
     // ...
   }).catch(function (error) {
     // Handle Errors here.
@@ -105,59 +113,45 @@ fireStoreApp.hadleAuth = (dispatch) => {
 }
 
 
-fireStoreApp.onAuthStateChanged = () => {
+fireStoreApp.onAuthStateChanged = (dispatch, action) => {
   firebase.auth().onAuthStateChanged(user => {
-    if(user){
-      console.log(user);
+    const login = {
+      user: {},
+      loginState: true
     }
-    else{
-      console.log('No esta logeado');
+    if (user) {
+      login.user = user;
+      dispatch({
+        type: action,
+        payload: login
+      });
+    }
+    else {
+      login.loginState= false;
+      dispatch({
+        type: action,
+        payload: login
+      });
     }
 
   });
 };
 
+fireStoreApp.signOut = (dispatch, action) => {
+  firebase.auth().signOut().then(() => {
+    const login = {
+      user: {},
+      loginState: false
+    }
+    dispatch({
+      type: action,
+      payload: login
+    });
+  }).catch(function (error) {
+    // An error happened.
+  });
+}
 
-// fireStoreApp.fetchObjects = (collection, dispatch, action) => {
-//   db.collection(collection).get().then((querySnapshot) => {
-//     querySnapshot.forEach((doc) => {
-//       dispatch({
-//         type: action,
-//         payload: doc.data()
-//       });
-//     });
-//   });
-// };
-
-// fireStoreApp.removeItem = (collection) => {
-//   db.collection(collection)
-//     .get()
-//     .then(function (querySnapshot) {
-//       querySnapshot.forEach(function (doc) {
-
-//         const algo = 1;
-//         if (doc.data().details && doc.data().details.type != "generic") {
-//           if (doc.data().details.institution == 'Sarasa') {
-//             // console.log(doc.data());
-//             db.collection(collection).doc(doc.id).delete().then(function () {
-//               console.log("Document successfully deleted!");
-//             }).catch(function (error) {
-//               console.error("Error removing document: ", error);
-//             });
-//           }
-//         }
-//         else {
-//           console.log(doc.data());
-//         }
-//       });
-//     })
-//     .catch(function (error) {
-//       console.log("Error getting documents: ", error);
-//     });
-
-// }
-
-// fireStoreApp.removeItem('experiences');
 
 
 fireStoreApp.createAutoID = (collection, document) => {
@@ -170,34 +164,6 @@ fireStoreApp.createAutoID = (collection, document) => {
     });
 }
 
-fireStoreApp.createAutoID = (collection, document) => {
-  db.collection(collection).add(document)
-    .then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function (error) {
-      console.error("Error adding document: ", error);
-    });
-}
 
-// fireStoreApp.remove = (dbRef, key) => {
-//   return dbRef.child(key).remove();
-// }
-
-// fireStoreApp.update = (dbRef, post, key) => {
-//   return dbRef.child(key).update(post);
-// }
-
-
-// fireStoreApp.fetchObject = (dbRef, dispatch, action) => {
-//   dbRef.on('value', snapshot => {
-//     dispatch({
-//       type: action,
-//       payload: snapshot.val()
-//     });
-//   });
-// }
-
-// }
 
 export default fireStoreApp;

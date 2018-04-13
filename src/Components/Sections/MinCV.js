@@ -34,7 +34,7 @@ class MinCV extends React.Component {
 
             return (
                 <div>
-                    <i className='icon-delete actions-item remove-icon' onClick={() => removeItem(props.id)}></i>
+                    {this.props.login.loginState ? <i className='icon-delete actions-item remove-icon' onClick={() => removeItem(props.id)}></i> : null}
                     <h3>{Parser(props.details.title)} {props.details.institution ? <a target="_blank" href={props.details.link}>@{Parser(props.details.institution)}</a> : null}</h3>
                     <h4>{props.details.beginDate} - {props.details.endDate}</h4>
 
@@ -43,25 +43,16 @@ class MinCV extends React.Component {
             );
 
         }
-        // const setExperiences = (props, index) => {
-        //     return (
-        //         <div>
-        //             <h3>{props.position} <a target="_blank" href={props.link}>@{props.company}</a></h3>
-        //             {renderCommunContentDetail(props)}
-        //         </div>
-        //     );
-        // }
 
-        // const renderCommunContentDetail = props => {
+        const toogleAuth = (user) => {
+            if (user.loginState) {
+                props.signOut();
+            }
+            else {
+                props.hadleAuth();
+            }
 
-        //     return (
-        //         <div>
-        //             <h4>{props.beginDate} - {props.endDate}</h4>
-
-        //             {props.content.length > 0 ? props.content.map((item, index) => { return <li key={index}>{Parser(item)} </li> }) : null}
-        //         </div>
-        //     );
-        // }
+        }
 
         const props = this.props;
         const personalData = props.personalData;
@@ -88,6 +79,12 @@ class MinCV extends React.Component {
             'dark-them': this.state.darkThem,
         });
 
+        // const loginClass = classNames({
+        //     'icon-lock_open': this.props.login.loginState == false,
+        //     'icon-lock_outline': this.props.login.loginState == true,
+        // });
+        const loginClass = classNames({ 'icon-lock_open': true }, { 'icon-lock_outline': this.props.login.loginState });
+
         const setThem = () => {
             this.setState({ darkThem: !this.state.darkThem })
         }
@@ -99,6 +96,11 @@ class MinCV extends React.Component {
                     {/*<div className="content">{thisIsMyCopy}</div>*/}
                     {/*<div className="content">{Parser(thisIsMyCopy)}</div>*/}
                     <aside className="aside-left-container">
+
+                        {JSON.stringify(props.login.user) != '{}' 
+                        ? <div>
+                        <p> {props.login.user.displayName}</p>
+                        <p>Estad: {props.login.loginState}</p> </div> : null}
                         {Object.keys(personalData.mainData).length != 0 ?
                             <div className="img-profile-container">
                                 {/*<img src={personalData.mainData.img}></img>*/}
@@ -134,7 +136,8 @@ class MinCV extends React.Component {
                         <header>
                             <i className='icon-them icon-brightness_medium' onClick={() => setThem()}></i>
                             <i className="icon-print" onClick={() => window.print()}></i>
-                            <i className="icon-person" onClick={() => props.hadleAuth()}></i>
+                            <i className={loginClass} onClick={() => toogleAuth(props.login)}></i>
+                            {/*{JSON.stringify(props.login.user) != '{}' ? <i className={loginClass} onClick={() => toogleAuth(props.login)}></i> : null}*/}
                         </header>
 
                         {content.map((data, index) => {
@@ -147,7 +150,7 @@ class MinCV extends React.Component {
 
                                         <div className="container-detail">
                                             <h2>{data.generic.title}</h2>
-                                            {data.list.map((item, index) => { return <article key={index}>{setContent(item, data.removeItem)}</article> })}
+                                            {data.list.map((item, index) => { return <article key={index}>{setContent(item, data.removeItem, props.login.loginState)}</article> })}
                                         </div>
                                     </section>
                                     : null
@@ -182,6 +185,7 @@ const mapStateToProps = (state) => {
         experiences: state.experiences,
         personalData: state.personalData,
         footer: state.footer,
+        login: state.login,
     };
 }
 
@@ -216,6 +220,9 @@ const mapDispatchToProps = dispatch => {
         },
         onAuthStateChanged() {
             React.actions.actionsLogin.onAuthStateChanged(dispatch)
+        },
+        signOut() {
+            React.actions.actionsLogin.signOut(dispatch)
         }
     };
 }

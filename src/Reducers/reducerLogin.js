@@ -4,25 +4,25 @@
 import React from 'react';
 
 const data = {
-    list: [],
-    mainData: {}
+    user: {},
+    loginState: false
 }
 
 
 const reducerLogin = (state = data, action) => {
     // console.error("ENTRA");
     switch (action.type) {
-        case 'FETCH_PERSONAL_DATA':           
+        case 'HANDLE-AUTH':           
             return {
                 ...state,
-                list: action.payload.personalData,
-                mainData: action.payload.mainData
+                user: action.payload.user,
+                loginState: action.payload.loginState
             };
-        case 'FETCH_TEXTO':
-            return {
-                ...state,
-                text: action.payload
-            };
+        // case 'FETCH_TEXTO':
+        //     return {
+        //         ...state,
+        //         loginState: action.payload
+        //     };
         case 'SET_SELECTED':
             return {
                 ...state,

@@ -227,8 +227,7 @@
     header {
         margin: 1% 0;
         text-align: right;
-        .icon-them,
-        .icon-print {
+        [class^="icon-"] {
             font-size: 1.2em;
             padding: 1%;
             &:hover {
@@ -290,7 +289,8 @@
                 }
             }
         }
-        header, .actions-item {
+        header,
+        .actions-item {
             display: none;
         }
         @page {
