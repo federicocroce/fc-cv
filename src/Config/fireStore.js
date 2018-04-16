@@ -96,6 +96,10 @@ fireStoreApp.hadleAuth = (dispatch, action) => {
       type: action,
       payload: login
     });
+    dispatch({
+      type: "SET_MEASSAGES",
+      payload: result.user.displayName + "Se ha logeado correctamente"
+    });
     // var token = result.credential.accessToken;
     // // The signed-in user info.
     // var user = result.user;

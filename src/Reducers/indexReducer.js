@@ -12,19 +12,16 @@ import { reducerExperiences as experiences } from './reducerExperiences';
 import { reducerPersonalData as personalData } from './reducerPersonalData';
 import { reducerFooter as footer } from './reducerFooter';
 import { reducerLogin as login } from './reducerLogin';
+import { reducerMessages as messages } from './reducerMessages';
 
 
 const allReducers = {
-    // posts,
-    // maps,
-    // user,
-    // user,
     experiences,
     estudies,
     personalData,
     footer,
     login,
-    // form:reduxFormReducer,
+    messages,
     router: routerReducer
 }
 

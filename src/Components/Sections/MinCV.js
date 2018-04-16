@@ -41,7 +41,6 @@ class MinCV extends React.Component {
                     {props.details.content.length > 0 ? props.details.content.map((item, index) => { return <li key={index}>{Parser(item)} </li> }) : null}
                 </div>
             );
-
         }
 
         const toogleAuth = (user) => {
@@ -89,18 +88,34 @@ class MinCV extends React.Component {
             this.setState({ darkThem: !this.state.darkThem })
         }
 
+        const setMessages = (messages) => {
+            return (
+                <div className='message-content'>
+                    {messages.map((data, index) => {
+                        return (
+                            <span key={index}>{Parser(data)}</span>
+                        );
+                    })}
+                </div>
+            );
+        };
+
         return (
 
             <div className="app-container">
+
+                {setMessages(props.messages.list)}
+
                 <main className={mainClass}>
                     {/*<div className="content">{thisIsMyCopy}</div>*/}
                     {/*<div className="content">{Parser(thisIsMyCopy)}</div>*/}
                     <aside className="aside-left-container">
 
-                        {JSON.stringify(props.login.user) != '{}' 
+                        {/* {JSON.stringify(props.login.user) != '{}' 
                         ? <div>
                         <p> {props.login.user.displayName}</p>
-                        <p>Estad: {props.login.loginState}</p> </div> : null}
+                        <p>Estad: {props.login.loginState}</p> </div> : null} */}
+
                         {Object.keys(personalData.mainData).length != 0 ?
                             <div className="img-profile-container">
                                 {/*<img src={personalData.mainData.img}></img>*/}
@@ -121,8 +136,8 @@ class MinCV extends React.Component {
                                         <a href={data.link} key={index} className="container-detail-personal-data table">
                                             <i className={data.icon}></i>
                                             <div className="container-detail">
-                                                <p>{Parser(data.content)}</p>
-                                                <p>{Parser(data.subcontent)}</p>
+                                                <span className='text'>{Parser(data.content)}</span>
+                                                <span className='text'>{Parser(data.subcontent)}</span>
                                             </div>
                                         </a>
                                     );
@@ -139,6 +154,8 @@ class MinCV extends React.Component {
                             <i className={loginClass} onClick={() => toogleAuth(props.login)}></i>
                             {/*{JSON.stringify(props.login.user) != '{}' ? <i className={loginClass} onClick={() => toogleAuth(props.login)}></i> : null}*/}
                         </header>
+
+
 
                         {content.map((data, index) => {
                             return (
@@ -186,6 +203,7 @@ const mapStateToProps = (state) => {
         personalData: state.personalData,
         footer: state.footer,
         login: state.login,
+        messages: state.messages,
     };
 }
 

@@ -68,7 +68,7 @@ body {
     .app-container main .aside-left-container .container-detail-personal-data {
       color: #ffffff;
       padding-bottom: 8%; }
-      .app-container main .aside-left-container .container-detail-personal-data p {
+      .app-container main .aside-left-container .container-detail-personal-data .text {
         font-size: 0.7em; }
       .app-container main .aside-left-container .container-detail-personal-data > div {
         width: 85%;
@@ -166,6 +166,17 @@ body {
       .app-container .container-footer .img-tecnologies:hover {
         filter: grayscale(0%);
         cursor: pointer; }
+  .app-container .message-content {
+    position: fixed;
+    z-index: 1000;
+    color: white;
+    background: green;
+    width: 21cm;
+    min-height: initial;
+    bottom: 0; }
+    .app-container .message-content > * {
+      display: block;
+      line-height: 2.2em; }
 
 header {
   margin: 1% 0;
