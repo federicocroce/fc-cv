@@ -1,3 +1,4 @@
+import React from 'react';
 import * as firebase from 'firebase';
 require("firebase/firestore");
 
@@ -96,10 +97,7 @@ fireStoreApp.hadleAuth = (dispatch, action) => {
       type: action,
       payload: login
     });
-    dispatch({
-      type: "SET_MEASSAGES",
-      payload: result.user.displayName + "Se ha logeado correctamente"
-    });
+    React.actions.actionsToast.testToast(dispatch, "Loageado");
     // var token = result.credential.accessToken;
     // // The signed-in user info.
     // var user = result.user;
@@ -131,7 +129,7 @@ fireStoreApp.onAuthStateChanged = (dispatch, action) => {
       });
     }
     else {
-      login.loginState= false;
+      login.loginState = false;
       dispatch({
         type: action,
         payload: login
@@ -151,20 +149,22 @@ fireStoreApp.signOut = (dispatch, action) => {
       type: action,
       payload: login
     });
+    React.actions.actionsToast.testToast(dispatch, "Desloageado");
   }).catch(function (error) {
     // An error happened.
   });
 }
 
 
-
-fireStoreApp.createAutoID = (collection, document) => {
+fireStoreApp.createAutoID = (dispatch, collection, document) => {
   db.collection(collection).add(document)
     .then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
+      React.actions.actionsToast.testToast(dispatch, "Document written with ID: ", docRef.id, 'successfully');
+      // console.log("Document written with ID: ", docRef.id);
     })
     .catch(function (error) {
-      console.error("Error adding document: ", error);
+      React.actions.actionsToast.testToast(dispatch, error.message, 'error');
+      // console.error("Error adding document: ", error);
     });
 }
 

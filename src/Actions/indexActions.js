@@ -7,6 +7,7 @@ import actionsExperiences from "./actionsExperiences";
 import actionsPersonalData from "./actionsPersonalData";
 import actionsFooter from "./actionsFooter";
 import actionsLogin from "./actionsLogin";
+import actionsToast from "./actionsToast";
 
 const actions = {    
     // actionsPost,
@@ -16,7 +17,8 @@ const actions = {
     actionsExperiences,
     actionsPersonalData,
     actionsFooter,
-    actionsLogin
+    actionsLogin,
+    actionsToast
 }
 
 export default actions;

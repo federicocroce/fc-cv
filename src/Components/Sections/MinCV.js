@@ -93,7 +93,7 @@ class MinCV extends React.Component {
                 <div className='message-content'>
                     {messages.map((data, index) => {
                         return (
-                            <span key={index}>{Parser(data)}</span>
+                            <span key={index}>{Parser(data.text)}</span>
                         );
                     })}
                 </div>
@@ -149,6 +149,7 @@ class MinCV extends React.Component {
                     </aside>
                     <section className="main-right-section">
                         <header>
+                            <i className='icon-them icon-chat' onClick={() => props.testToast('Fede')}></i>
                             <i className='icon-them icon-brightness_medium' onClick={() => setThem()}></i>
                             <i className="icon-print" onClick={() => window.print()}></i>
                             <i className={loginClass} onClick={() => toogleAuth(props.login)}></i>
@@ -216,7 +217,7 @@ const mapDispatchToProps = dispatch => {
             React.actions.actionsExperiences.fetchObjects(dispatch)
         },
         createExperiences() {
-            React.actions.actionsExperiences.createAutoID()
+            React.actions.actionsExperiences.createAutoID(dispatch)
         },
         removeExperiences(id) {
             React.actions.actionsExperiences.removeItem(id)
@@ -225,7 +226,7 @@ const mapDispatchToProps = dispatch => {
             React.actions.actionsPersonalData.fetchObjects(dispatch)
         },
         createEstudies() {
-            React.actions.actionsEstudies.createAutoID()
+            React.actions.actionsEstudies.createAutoID(dispatch)
         },
         removeEstudies(id) {
             React.actions.actionsEstudies.removeItem(id)
@@ -241,6 +242,9 @@ const mapDispatchToProps = dispatch => {
         },
         signOut() {
             React.actions.actionsLogin.signOut(dispatch)
+        },
+        testToast(text) {
+            React.actions.actionsToast.testToast(dispatch, text)
         }
     };
 }
