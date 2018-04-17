@@ -86,7 +86,7 @@
                 }
                 .container-detail-personal-data {
                     color: $primary-color-text;
-                    padding-bottom: 8%;
+                    // padding-bottom: 8%;
                     .text {
                         display: block;
                         font-size: 0.7em;
@@ -94,7 +94,7 @@
                     &>div {
                         width: 85%;
                         border-bottom: 1px solid $color-aca;
-                        padding: 0 8% 8% 0;
+                        padding: 8% 8% 8% 0;
                     }
                     &:first-of-type {
                         padding-top: 8%;
@@ -105,7 +105,7 @@
                 [class^="icon-"] {
                     display: inline-block;
                     font-size: 1.3em;
-                    padding-right: 20px;
+                    padding: 50% 20px 0 0;
                 }
             }
             .main-right-section {

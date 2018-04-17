@@ -66,21 +66,20 @@ body {
         .app-container main .aside-left-container .img-profile-container .content-img p {
           font-size: 0.8em; }
     .app-container main .aside-left-container .container-detail-personal-data {
-      color: #ffffff;
-      padding-bottom: 8%; }
+      color: #ffffff; }
       .app-container main .aside-left-container .container-detail-personal-data .text {
         display: block;
         font-size: 0.7em; }
       .app-container main .aside-left-container .container-detail-personal-data > div {
         width: 85%;
         border-bottom: 1px solid #398aca;
-        padding: 0 8% 8% 0; }
+        padding: 8% 8% 8% 0; }
       .app-container main .aside-left-container .container-detail-personal-data:first-of-type {
         padding-top: 8%; }
     .app-container main .aside-left-container [class^="icon-"] {
       display: inline-block;
       font-size: 1.3em;
-      padding-right: 20px; }
+      padding: 50% 20px 0 0; }
   .app-container main .main-right-section {
     transition: all 0.3s ease;
     background: #e3e3e3;
