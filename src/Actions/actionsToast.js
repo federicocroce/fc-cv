@@ -27,7 +27,7 @@ const removeToast = (dispatch, currentId) => {
     }, 3000);
 }
 
-actions.testToast = (dispatch, text ,type='') => {
+actions.setToast = (dispatch, text ,type='') => {
     id++;
 
     dispatch({

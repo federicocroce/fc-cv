@@ -75,11 +75,26 @@ fireStoreApp.fetchObjects = (collection, dispatch, action) => {
   });
 };
 
-fireStoreApp.removeItem = (collection, id) => {
+
+fireStoreApp.createAutoID = (dispatch, collection, document) => {
+  db.collection(collection).add(document)
+    .then(function (docRef) {
+      React.actions.actionsToast.setToast(dispatch, "Document written with ID: ", docRef.id, 'successfully');
+      // console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function (error) {
+      React.actions.actionsToast.setToast(dispatch, error.message, 'error');
+      // console.error("Error adding document: ", error);
+    });
+}
+
+
+fireStoreApp.removeItem = (dispatch, collection, id) => {
   db.collection(collection).doc(id).delete().then(function () {
+    React.actions.actionsToast.setToast(dispatch, "Document successfully deleted!", 'successfully');
     console.log("Document successfully deleted!");
   }).catch(function (error) {
-    console.error("Error removing document: ", error);
+    React.actions.actionsToast.setToast(dispatch, error.message, 'error');
   });
 }
 
@@ -97,7 +112,7 @@ fireStoreApp.hadleAuth = (dispatch, action) => {
       type: action,
       payload: login
     });
-    React.actions.actionsToast.testToast(dispatch, "Loageado");
+    React.actions.actionsToast.setToast(dispatch, "Bienvenido " + result.user.displayName);
     // var token = result.credential.accessToken;
     // // The signed-in user info.
     // var user = result.user;
@@ -110,6 +125,7 @@ fireStoreApp.hadleAuth = (dispatch, action) => {
     var email = error.email;
     // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
+    React.actions.actionsToast.setToast(dispatch, errorMessage, "error");
     // ...
   });
 }
@@ -149,24 +165,12 @@ fireStoreApp.signOut = (dispatch, action) => {
       type: action,
       payload: login
     });
-    React.actions.actionsToast.testToast(dispatch, "Desloageado");
+    React.actions.actionsToast.setToast(dispatch, "Desloageado");
   }).catch(function (error) {
-    // An error happened.
+    React.actions.actionsToast.setToast(dispatch, error.message, "error");
   });
 }
 
-
-fireStoreApp.createAutoID = (dispatch, collection, document) => {
-  db.collection(collection).add(document)
-    .then(function (docRef) {
-      React.actions.actionsToast.testToast(dispatch, "Document written with ID: ", docRef.id, 'successfully');
-      // console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function (error) {
-      React.actions.actionsToast.testToast(dispatch, error.message, 'error');
-      // console.error("Error adding document: ", error);
-    });
-}
 
 
 

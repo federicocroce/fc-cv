@@ -226,14 +226,26 @@
             position: fixed;
             z-index: 1000;
             color: white;
-            background: green;
+            background: transparent;
             width: 21cm;
             min-height: initial;
             bottom: 0;
             >* {
                 display: block;
                 line-height: 2.2em;
-            }
+                margin: .5em;
+                background: rgba(0, 76, 0, .8);
+                padding: 0.3em 2em;
+                border-radius: 4px;
+                text-align: center;
+                color: white; // opacity: 0;
+                &.error {
+                    transition: all $time-transition ease;
+                    background: rgba(76, 0, 0, .8); // opacity: 1;
+                }
+            } // .error{
+            //     background: red;
+            // }
         }
     }
 
@@ -275,6 +287,9 @@
                         width: 90%;
                     }
                 }
+            }
+            .message-content {
+                width: 100%;
             }
         }
     }

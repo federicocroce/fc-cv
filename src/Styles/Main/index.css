@@ -170,13 +170,22 @@ body {
     position: fixed;
     z-index: 1000;
     color: white;
-    background: green;
+    background: transparent;
     width: 21cm;
     min-height: initial;
     bottom: 0; }
     .app-container .message-content > * {
       display: block;
-      line-height: 2.2em; }
+      line-height: 2.2em;
+      margin: .5em;
+      background: rgba(0, 76, 0, 0.8);
+      padding: 0.3em 2em;
+      border-radius: 4px;
+      text-align: center;
+      color: white; }
+      .app-container .message-content > *.error {
+        transition: all 0.3s ease;
+        background: rgba(76, 0, 0, 0.8); }
 
 header {
   margin: 1% 0;
@@ -196,7 +205,9 @@ header {
         display: block;
         width: 100%; }
     .app-container .aside-left-container .container-detail-personal-data .container-detail {
-      width: 90%; } }
+      width: 90%; }
+    .app-container .message-content {
+      width: 100%; } }
 
 @media print {
   .app-container {

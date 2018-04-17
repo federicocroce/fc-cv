@@ -34,7 +34,7 @@ class MinCV extends React.Component {
 
             return (
                 <div>
-                    {this.props.login.loginState ? <i className='icon-delete actions-item remove-icon' onClick={() => removeItem(props.id)}></i> : null}
+                    <i className='icon-delete actions-item remove-icon' onClick={() => removeItem(props.id)}></i>
                     <h3>{Parser(props.details.title)} {props.details.institution ? <a target="_blank" href={props.details.link}>@{Parser(props.details.institution)}</a> : null}</h3>
                     <h4>{props.details.beginDate} - {props.details.endDate}</h4>
 
@@ -93,7 +93,9 @@ class MinCV extends React.Component {
                 <div className='message-content'>
                     {messages.map((data, index) => {
                         return (
-                            <span key={index}>{Parser(data.text)}</span>
+                            <div className={data.type} key={index}>
+                                <span>{Parser(data.text)}</span>
+                            </div>
                         );
                     })}
                 </div>
@@ -149,7 +151,7 @@ class MinCV extends React.Component {
                     </aside>
                     <section className="main-right-section">
                         <header>
-                            <i className='icon-them icon-chat' onClick={() => props.testToast('Fede')}></i>
+                            <i className='icon-them icon-chat' onClick={() => props.setToast('Fede')}></i>
                             <i className='icon-them icon-brightness_medium' onClick={() => setThem()}></i>
                             <i className="icon-print" onClick={() => window.print()}></i>
                             <i className={loginClass} onClick={() => toogleAuth(props.login)}></i>
@@ -220,7 +222,7 @@ const mapDispatchToProps = dispatch => {
             React.actions.actionsExperiences.createAutoID(dispatch)
         },
         removeExperiences(id) {
-            React.actions.actionsExperiences.removeItem(id)
+            React.actions.actionsExperiences.removeItem(dispatch, id)
         },
         fetchPersonalData() {
             React.actions.actionsPersonalData.fetchObjects(dispatch)
@@ -229,7 +231,7 @@ const mapDispatchToProps = dispatch => {
             React.actions.actionsEstudies.createAutoID(dispatch)
         },
         removeEstudies(id) {
-            React.actions.actionsEstudies.removeItem(id)
+            React.actions.actionsEstudies.removeItem(dispatch, id)
         },
         fetchFooter() {
             React.actions.actionsFooter.fetchObjects(dispatch)
@@ -243,8 +245,8 @@ const mapDispatchToProps = dispatch => {
         signOut() {
             React.actions.actionsLogin.signOut(dispatch)
         },
-        testToast(text) {
-            React.actions.actionsToast.testToast(dispatch, text)
+        setToast(text) {
+            React.actions.actionsToast.setToast(dispatch, text)
         }
     };
 }

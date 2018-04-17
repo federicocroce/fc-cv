@@ -22,7 +22,7 @@ const document = {
 
 actions.fetchObjects = dispatch => React.config.fireStoreApp.fetchObjects(collection, dispatch, 'FETCH_EXPERIENCES');
 actions.createAutoID = dispatch => React.config.fireStoreApp.createAutoID(dispatch, collection, document);
-actions.removeItem = id => React.config.fireStoreApp.removeItem(collection, id);
+actions.removeItem = (dispatch, id) => React.config.fireStoreApp.removeItem(dispatch, collection, id);
 
 // actions.create = post =>  React.config.firebaseApp.create(dbRef, post);
 // actions.remove = (key) => React.config.firebaseApp.remove(dbRef, key);
