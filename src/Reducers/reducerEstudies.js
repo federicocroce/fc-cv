@@ -16,15 +16,16 @@ const reducerEstudies = (state = data, action) => {
             const list = [];
             let generic = state.generic;
 
-
             action.payload.map((data, index) => {
                 if (data.type != "generic") {
                     list.push(data);
                 }
-                else{
+                else {
                     generic = data;
                 }
             });
+
+            list.sort((a, b) => b.details.id - a.details.id);
           
             return {
                 ...state,
