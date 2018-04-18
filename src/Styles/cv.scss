@@ -85,11 +85,11 @@
                     }
                 }
                 .container-detail-personal-data {
-                    color: $primary-color-text;
-                    // padding-bottom: 8%;
+                    color: $primary-color-text; // padding-bottom: 8%;
                     .text {
                         display: block;
                         font-size: 0.7em;
+                        line-height: 1.6em;
                     }
                     &>div {
                         width: 85%;
@@ -97,15 +97,15 @@
                         padding: 8% 8% 8% 0;
                     }
                     &:first-of-type {
-                        padding-top: 8%;
+                        // padding-top: 8%;
                     } // div:last-of-type {
                     //     border-bottom: none;
                     // }
                 }
                 [class^="icon-"] {
-                    display: inline-block;
+                    display: table-cell;
                     font-size: 1.3em;
-                    padding: 50% 20px 0 0;
+                    padding: 8% 20px 0 0;
                 }
             }
             .main-right-section {
@@ -281,12 +281,18 @@
                     width: 100%;
                 }
             }
-            .aside-left-container {
+            main .aside-left-container {
                 .container-detail-personal-data {
-                    // padding: 0 0 4% 4%;
+                    &:first-of-type {
+                        // padding-top: 3%;
+                    }
                     .container-detail {
                         width: 90%;
+                        padding: 5% 8% 5% 0;
                     }
+                }
+                [class^="icon-"] {
+                    padding: 5% 2% 0 0;
                 }
             }
             .message-content {
@@ -315,8 +321,12 @@
                 width: 30% !important;
                 .container-detail-personal-data {
                     .container-detail {
-                        width: 85%;
+                        width: 85% !important;
+                        padding: 8% 8% 8% 0 !important;
                     }
+                }
+                [class^="icon-"] {
+                    padding: 8% 20px 0 0 !important;
                 }
             }
         }
