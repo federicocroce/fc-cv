@@ -12,7 +12,9 @@ const data = {
 const reducerPersonalData = (state = data, action) => {
     // console.error("ENTRA");
     switch (action.type) {
-        case 'FETCH_PERSONAL_DATA':           
+        case 'FETCH_PERSONAL_DATA':  
+   
+        action.payload.personalData.sort((a, b) => a.index - b.index);  
             return {
                 ...state,
                 list: action.payload.personalData,
