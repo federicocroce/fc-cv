@@ -11,7 +11,8 @@ class MinCV extends React.Component {
         super(props);
 
         this.state = {
-            darkThem: this.props.darkThem
+            darkThem: this.props.darkThem,
+            activeActions: false
         };
     }
 
@@ -50,6 +51,16 @@ class MinCV extends React.Component {
             else {
                 props.hadleAuth();
             }
+
+        }
+
+        const toogleManu = (user) => {
+            // if (user.loginState) {
+            //     props.signOut();
+            // }
+            // else {
+            //     props.hadleAuth();
+            // }
 
         }
 
@@ -108,6 +119,17 @@ class MinCV extends React.Component {
 
                 {setMessages(props.messages.list)}
 
+                <header>
+                    <div className={classNames({ "container-actions": true }, { 'active': this.state.activeActions })}>
+                        <i className='icon-chat' onClick={() => props.setToast('Fede')}></i>
+                        <i className='icon-brightness_medium' onClick={() => setThem()}></i>
+                        <i className="icon-print" onClick={() => window.print()}></i>
+                        <i className={loginClass} onClick={() => toogleAuth(props.login)}></i>
+                    </div>
+                    <i className='icon-menu' onClick={() =>  this.setState({ activeActions: !this.state.activeActions })}></i>
+                    {/*{JSON.stringify(props.login.user) != '{}' ? <i className={loginClass} onClick={() => toogleAuth(props.login)}></i> : null}*/}
+                </header>
+
                 <main className={mainClass}>
                     {/*<div className="content">{thisIsMyCopy}</div>*/}
                     {/*<div className="content">{Parser(thisIsMyCopy)}</div>*/}
@@ -150,15 +172,6 @@ class MinCV extends React.Component {
 
                     </aside>
                     <section className="main-right-section">
-                        <header>
-                            <i className='icon-them icon-chat' onClick={() => props.setToast('Fede')}></i>
-                            <i className='icon-them icon-brightness_medium' onClick={() => setThem()}></i>
-                            <i className="icon-print" onClick={() => window.print()}></i>
-                            <i className={loginClass} onClick={() => toogleAuth(props.login)}></i>
-                            {/*{JSON.stringify(props.login.user) != '{}' ? <i className={loginClass} onClick={() => toogleAuth(props.login)}></i> : null}*/}
-                        </header>
-
-
 
                         {content.map((data, index) => {
                             return (
@@ -186,7 +199,7 @@ class MinCV extends React.Component {
                             {footer.list.map((data, index) => {
                                 return (
                                     <a target="_blank" href={data.link} key={index} className="img-tecnologies">
-                                        <amp-img src={data.img} width="40" height="40"></amp-img>
+                                        <img src={data.img} width="40" height="40"></img>
                                     </a>
                                 );
                             })}

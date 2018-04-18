@@ -27,8 +27,6 @@ body {
   max-width: 21cm; }
   .app-container h1 {
     font-size: 1.5em; }
-  .app-container > * {
-    min-height: 100vh; }
   .app-container main.dark-them .aside-left-container {
     background: #191919; }
   .app-container main.dark-them .main-right-section {
@@ -78,14 +76,14 @@ body {
     .app-container main .aside-left-container [class^="icon-"] {
       display: table-cell;
       font-size: 1.3em;
-      padding: 8% 20px 0 0; }
+      padding: 10% 20px 0 0; }
   .app-container main .main-right-section {
     transition: all 0.3s ease;
     background: #e3e3e3;
     box-shadow: inset 5px 0px 11px rgba(0, 0, 0, 0.19);
     color: #737373;
     width: 70%;
-    padding: 0 3% 3% 3%;
+    padding: 5% 3% 3% 3%;
     position: relative; }
     .app-container main .main-right-section h1.name {
       text-align: left; }
@@ -185,15 +183,24 @@ body {
       .app-container .message-content > *.error {
         transition: all 0.3s ease;
         background: rgba(76, 0, 0, 0.8); }
-
-header {
-  margin: 1% 0;
-  text-align: right; }
-  header [class^="icon-"] {
-    font-size: 1.2em;
-    padding: 1%; }
-    header [class^="icon-"]:hover {
-      cursor: pointer; }
+  .app-container header {
+    margin: 1% 0;
+    text-align: right;
+    position: absolute;
+    z-index: 10000;
+    right: 0; }
+    .app-container header [class^="icon-"] {
+      font-size: 1.3em;
+      padding: 15px;
+      color: #737373; }
+      .app-container header [class^="icon-"]:hover {
+        cursor: pointer; }
+    .app-container header .container-actions {
+      position: relative;
+      display: inline; }
+    .app-container header .icon-menu {
+      font-size: 1.5em;
+      display: none; }
 
 @media (max-width: 21cm) {
   .app-container {
@@ -207,9 +214,22 @@ header {
       width: 90%;
       padding: 5% 8% 5% 0; }
     .app-container main .aside-left-container [class^="icon-"] {
-      padding: 5% 2% 0 0; }
+      padding: 6% 2% 0 0; }
     .app-container .message-content {
-      width: 100%; } }
+      width: 100%; }
+    .app-container header .container-actions {
+      visibility: none;
+      opacity: 0;
+      transition: all 3s ease; }
+      .app-container header .container-actions [class^="icon-"] {
+        padding: 6% 0% 0 0; }
+      .app-container header .container-actions.active {
+        visibility: initial;
+        opacity: 1; }
+        .app-container header .container-actions.active [class^="icon-"] {
+          padding: 6% 20px 0 0; }
+    .app-container header .icon-menu {
+      display: initial; } }
 
 @media print {
   .app-container {

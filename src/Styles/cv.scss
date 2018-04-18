@@ -4,7 +4,7 @@
         box-sizing: border-box;
         text-decoration: none;
     }
-
+    
     $time-transition: 0.3s; // section {
     //     background: $secondary-color-dark;
     //     min-height: 100vh;
@@ -19,7 +19,7 @@
         //     text-align: justify;
         // }
     }
-
+    
     .app-container {
         position: relative;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -30,9 +30,9 @@
         h1 {
             font-size: 1.5em; // padding: 10px;
         }
-        &>* {
-            min-height: 100vh; // display: inline-block;
-        }
+        // &>* {
+        //     min-height: 100vh; // display: inline-block;
+        // }
         main {
             &.dark-them {
                 .aside-left-container {
@@ -105,7 +105,7 @@
                 [class^="icon-"] {
                     display: table-cell;
                     font-size: 1.3em;
-                    padding: 8% 20px 0 0;
+                    padding: 10% 20px 0 0;
                 }
             }
             .main-right-section {
@@ -114,7 +114,7 @@
                 box-shadow: inset 5px 0px 11px rgba(0, 0, 0, 0.19);
                 color: $grey-dark;
                 width: 70%;
-                padding: 0 3% 3% 3%; // padding: 4%;
+                padding: 5% 3% 3% 3%; // padding: 4%;
                 position: relative;
                 h1.name {
                     text-align: left;
@@ -248,27 +248,31 @@
             //     background: red;
             // }
         }
-    }
-
-    header {
-        margin: 1% 0;
-        text-align: right;
-        [class^="icon-"] {
-            font-size: 1.2em;
-            padding: 1%;
-            &:hover {
-                cursor: pointer;
+        header {
+            margin: 1% 0;
+            text-align: right;
+            [class^="icon-"] {
+                font-size: 1.3em;
+                padding: 15px;
+                color: $grey-dark;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .container-actions {
+                position: relative;
+                display: inline;
+            }
+            position: absolute;
+            z-index: 10000;
+            right: 0;
+            .icon-menu {
+                font-size: 1.5em;
+                display: none;
             }
         }
-    } // .print {
-    //     color: red;
-    //     position: absolute;
-    //     right: 10px;
-    //     z-index: 1;
-    //     &:hover {
-    //         cursor: pointer;
-    //     }
-    // }
+    }
+    
     @media (max-width: 21cm) {
         .app-container {
             width: 100%; // .message-content{
@@ -292,15 +296,35 @@
                     }
                 }
                 [class^="icon-"] {
-                    padding: 5% 2% 0 0;
+                    padding: 6% 2% 0 0;
                 }
             }
             .message-content {
                 width: 100%;
             }
+            header {
+                .container-actions {
+                    visibility: none;
+                    opacity: 0;
+                    [class^="icon-"] {
+                        padding: 6% 0% 0 0;
+                    }
+                    transition: all 3s ease;
+                    &.active {
+                        visibility: initial;
+                        opacity: 1;
+                        [class^="icon-"] {
+                            padding: 6% 20px 0 0;
+                        }
+                    }
+                }
+                .icon-menu {
+                    display: initial;
+                }
+            }
         }
     }
-
+    
     @media print {
         .app-container {
             width: 21cm;
