@@ -220,9 +220,10 @@ body {
     .app-container header .container-actions {
       visibility: none;
       opacity: 0;
-      transition: all 3s ease; }
+      transition: all 0.5s ease; }
       .app-container header .container-actions [class^="icon-"] {
-        padding: 6% 0% 0 0; }
+        padding: 6% 0 0 0;
+        transition: all 0.5s ease; }
       .app-container header .container-actions.active {
         visibility: initial;
         opacity: 1; }
