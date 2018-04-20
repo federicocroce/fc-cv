@@ -13,6 +13,7 @@ import { reducerPersonalData as personalData } from './reducerPersonalData';
 import { reducerFooter as footer } from './reducerFooter';
 import { reducerLogin as login } from './reducerLogin';
 import { reducerMessages as messages } from './reducerMessages';
+import { reducerLoading as loading } from './reducerLoading';
 
 
 const allReducers = {
@@ -22,6 +23,7 @@ const allReducers = {
     footer,
     login,
     messages,
+    loading,
     router: routerReducer
 }
 

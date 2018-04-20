@@ -118,6 +118,21 @@ class MinCV extends React.Component {
             <div className="app-container">
 
                 {setMessages(props.messages.list)}
+{/*
+                {props.loading.isLoading ? <div className="loading loader ">
+                    <div class="loader-inner">
+                        <div class="spinner"></div>
+                        <div class="blue static"></div>
+                        <div class="white active"></div>
+                    </div>
+                </div> : null}*/}
+                <div className="loading loader ">
+                    <div className="loader-inner">
+                        <div className="spinner"></div>
+                        <div className="blue static"></div>
+                        <div className="white active"></div>
+                    </div>
+                </div>
 
                 <header>
                     <div className={classNames({ "container-actions": true }, { 'active': this.state.activeActions })}>
@@ -126,7 +141,7 @@ class MinCV extends React.Component {
                         <i className="icon-print" onClick={() => window.print()}></i>
                         <i className={loginClass} onClick={() => toogleAuth(props.login)}></i>
                     </div>
-                    <i className='icon-menu' onClick={() =>  this.setState({ activeActions: !this.state.activeActions })}></i>
+                    <i className='icon-menu' onClick={() => this.setState({ activeActions: !this.state.activeActions })}></i>
                     {/*{JSON.stringify(props.login.user) != '{}' ? <i className={loginClass} onClick={() => toogleAuth(props.login)}></i> : null}*/}
                 </header>
 
@@ -220,6 +235,7 @@ const mapStateToProps = (state) => {
         footer: state.footer,
         login: state.login,
         messages: state.messages,
+        loading: state.loading,
     };
 }
 

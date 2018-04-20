@@ -65,6 +65,7 @@ fireStoreApp.getStorageUrlImg = function (path) {
 
 
 fireStoreApp.fetchObjects = (collection, dispatch, action) => {
+  React.actions.actionsLoading.setLoading(dispatch, true);
   db.collection(collection).onSnapshot(function (snapshot) {
     // snapshot.docChanges.forEach(function (change) {
 
@@ -80,18 +81,22 @@ fireStoreApp.fetchObjects = (collection, dispatch, action) => {
       type: action,
       payload: array.length > 1 ? array : array[0]
     });
+    React.actions.actionsLoading.setLoading(dispatch, false);
   });
 };
 
 
 fireStoreApp.createAutoID = (dispatch, collection, document) => {
+  React.actions.actionsLoading.setLoading(dispatch, true);
   db.collection(collection).add(document)
     .then(function (docRef) {
-      React.actions.actionsToast.setToast(dispatch, "Document written with ID: ", docRef.id, 'successfully');
+      React.actions.actionsToast.setToast(dispatch, "Se agregó correctamente.", 'successfully');
+      React.actions.actionsLoading.setLoading(dispatch, false);
       // console.log("Document written with ID: ", docRef.id);
     })
     .catch(function (error) {
-      React.actions.actionsToast.setToast(dispatch, error.message, 'error');
+      React.actions.actionsToast.setToast(dispatch, errorMaps[error.code], 'error');
+      React.actions.actionsLoading.setLoading(dispatch, false);
       // console.error("Error adding document: ", error);
     });
 }
@@ -99,10 +104,9 @@ fireStoreApp.createAutoID = (dispatch, collection, document) => {
 
 fireStoreApp.removeItem = (dispatch, collection, id) => {
   db.collection(collection).doc(id).delete().then(function () {
-    React.actions.actionsToast.setToast(dispatch, "Document successfully deleted!", 'successfully');
-    console.log("Document successfully deleted!");
+    React.actions.actionsToast.setToast(dispatch, "Se eliminó correctamente.", 'successfully');
   }).catch(function (error) {
-    React.actions.actionsToast.setToast(dispatch, error.message, 'error');
+    React.actions.actionsToast.setToast(dispatch, errorMaps[error.code], 'error');
   });
 }
 
@@ -179,7 +183,9 @@ fireStoreApp.signOut = (dispatch, action) => {
   });
 }
 
-
+const errorMaps = {
+  "permission-denied": "Acceso denegado"
+}
 
 
 export default fireStoreApp;

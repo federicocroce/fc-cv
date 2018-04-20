@@ -1,7 +1,4 @@
 import React from 'react';
-import * as firebase from 'firebase';
-
-const collection = 'footer';
 
 const actions = {};
 
