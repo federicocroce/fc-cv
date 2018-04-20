@@ -1,11 +1,12 @@
 import React from 'react';
 import * as firebase from 'firebase';
+// var Firestore = require('@google-cloud/firestore');
 require("firebase/firestore");
 
 
 const fireStoreApp = {};
 
-
+// var firestore = new Firestore();
 
 
 // Initialize Firebase
@@ -23,6 +24,7 @@ const storage = firebase.storage();
 
 
 const db = firebase.firestore();
+
 
 fireStoreApp.getStorageUrlImg = function (path) {
 
@@ -54,6 +56,12 @@ fireStoreApp.getStorageUrlImg = function (path) {
   });
 }
 
+
+// firestore.getCollections().then(collections => {
+//   for (let collection of collections) {
+//     console.log(`Found collection with id: ${collection.id}`);
+//   }
+// });
 
 
 fireStoreApp.fetchObjects = (collection, dispatch, action) => {

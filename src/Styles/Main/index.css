@@ -132,6 +132,7 @@ body {
         list-style-type: none;
         line-height: 1.4em;
         margin-top: 10px;
+        text-align: justify;
         font-size: 0.8em; }
       .app-container main .main-right-section section article {
         padding: 15px 0;
@@ -140,7 +141,7 @@ body {
         .app-container main .main-right-section section article:last-of-type {
           border-bottom: none; }
         .app-container main .main-right-section section article div {
-          padding-right: 5%; }
+          padding-right: 8%; }
         .app-container main .main-right-section section article:hover i.actions-item.remove-icon {
           visibility: initial;
           opacity: 1; }
@@ -188,7 +189,7 @@ body {
     text-align: right;
     position: absolute;
     z-index: 10000;
-    right: 0; }
+    right: 14px; }
     .app-container header [class^="icon-"] {
       font-size: 1.3em;
       padding: 15px;

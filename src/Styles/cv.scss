@@ -163,6 +163,7 @@
                     a {
                         font-size: 1em;
                         color: $grey-dark; // line-height: 1em;
+                        // text-align: justify;
                     }
                     h4 {
                         color: $color-1e0;
@@ -174,6 +175,7 @@
                         list-style-type: none;
                         line-height: 1.4em;
                         margin-top: 10px;
+                        text-align: justify;
                         font-size: 0.8em; // &:last-of-type {
                         //     margin: 0;
                         // }
@@ -186,7 +188,7 @@
                             border-bottom: none;
                         }
                         div {
-                            padding-right: 5%;
+                            padding-right: 8%;
                         }
                         &:hover {
                             i.actions-item.remove-icon {
@@ -265,7 +267,7 @@
             }
             position: absolute;
             z-index: 10000;
-            right: 0;
+            right: 14px;
             .icon-menu {
                 font-size: 1.5em;
                 display: none;
