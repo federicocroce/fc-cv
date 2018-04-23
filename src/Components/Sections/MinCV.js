@@ -85,7 +85,7 @@ class MinCV extends React.Component {
         ];
 
         const mainClass = classNames({
-            'table': true,
+            'app-container': true,
             'dark-them': this.state.darkThem,
         });
 
@@ -115,10 +115,10 @@ class MinCV extends React.Component {
 
         return (
 
-            <div className="app-container">
+            <div className={mainClass}>
 
                 {setMessages(props.messages.list)}
-{/*
+                {/*
                 {props.loading.isLoading ? <div className="loading loader ">
                     <div class="loader-inner">
                         <div class="spinner"></div>
@@ -126,13 +126,13 @@ class MinCV extends React.Component {
                         <div class="white active"></div>
                     </div>
                 </div> : null}*/}
-                <div className="loading loader ">
-                    <div className="loader-inner">
-                        <div className="spinner"></div>
-                        <div className="blue static"></div>
-                        <div className="white active"></div>
+                {props.loading.isLoading ?<div className="loading loader ">
+                    <div className="spinner">
+                        <div className="bounce1"></div>
+                        <div className="bounce2"></div>
+                        <div></div>
                     </div>
-                </div>
+                </div>: null}
 
                 <header>
                     <div className={classNames({ "container-actions": true }, { 'active': this.state.activeActions })}>
@@ -145,7 +145,7 @@ class MinCV extends React.Component {
                     {/*{JSON.stringify(props.login.user) != '{}' ? <i className={loginClass} onClick={() => toogleAuth(props.login)}></i> : null}*/}
                 </header>
 
-                <main className={mainClass}>
+                <main className="table">
                     {/*<div className="content">{thisIsMyCopy}</div>*/}
                     {/*<div className="content">{Parser(thisIsMyCopy)}</div>*/}
                     <aside className="aside-left-container">
