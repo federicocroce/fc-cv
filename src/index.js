@@ -1,4 +1,5 @@
 import React from 'react';
+import {components} from 'react';
 import ReactDOM from 'react-dom';
 // import './index.css';
 
@@ -13,5 +14,5 @@ import ParallaxAMP from './Components/Sections/ParallaxAMP';
 import registerServiceWorker from './registerServiceWorker';
 
 frameworkConfig();
-ReactDOM.render(<Index />, document.getElementById('root'));
+ReactDOM.render(<components.Index />, document.getElementById('root'));
 registerServiceWorker();

@@ -40,6 +40,7 @@ import fireStoreApp from './fireStore';
 
 //////////// ACTIONS ///////////////////////
 import actions from "../Actions/indexActions"
+import components from "../Components/indexComponents"
 
 
 
@@ -74,7 +75,9 @@ const frameworkConfig = props => {
     // React.components.UploadImg = UploadImg;
     // React.components.Combobox = Combobox;
 
-    React.components.Index = Index;
+    React.components = components;
+
+    // React.components.Index = Index;
     // React.components.Home = Home;
     // React.components.Card = Card;
     // React.components.CardDetails = CardDetails;
