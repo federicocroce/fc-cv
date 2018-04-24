@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {actions} from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Parser from 'html-react-parser';
@@ -242,40 +242,40 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchEstudies() {
-            React.actions.actionsEstudies.fetchObjects(dispatch)
+            actions.actionsEstudies.fetchObjects(dispatch)
         },
         fetchExperiences() {
-            React.actions.actionsExperiences.fetchObjects(dispatch)
+            actions.actionsExperiences.fetchObjects(dispatch)
         },
         createExperiences() {
-            React.actions.actionsExperiences.createAutoID(dispatch)
+            actions.actionsExperiences.createAutoID(dispatch)
         },
         removeExperiences(id) {
-            React.actions.actionsExperiences.removeItem(dispatch, id)
+            actions.actionsExperiences.removeItem(dispatch, id)
         },
         fetchPersonalData() {
-            React.actions.actionsPersonalData.fetchObjects(dispatch)
+            actions.actionsPersonalData.fetchObjects(dispatch)
         },
         createEstudies() {
-            React.actions.actionsEstudies.createAutoID(dispatch)
+            actions.actionsEstudies.createAutoID(dispatch)
         },
         removeEstudies(id) {
-            React.actions.actionsEstudies.removeItem(dispatch, id)
+            actions.actionsEstudies.removeItem(dispatch, id)
         },
         fetchFooter() {
-            React.actions.actionsFooter.fetchObjects(dispatch)
+            actions.actionsFooter.fetchObjects(dispatch)
         },
         hadleAuth() {
-            React.actions.actionsLogin.hadleAuth(dispatch)
+            actions.actionsLogin.hadleAuth(dispatch)
         },
         onAuthStateChanged() {
-            React.actions.actionsLogin.onAuthStateChanged(dispatch)
+            actions.actionsLogin.onAuthStateChanged(dispatch)
         },
         signOut() {
-            React.actions.actionsLogin.signOut(dispatch)
+            actions.actionsLogin.signOut(dispatch)
         },
         setToast(text) {
-            React.actions.actionsToast.setToast(dispatch, text)
+            actions.actionsToast.setToast(dispatch, text)
         }
     };
 }

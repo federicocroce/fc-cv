@@ -42,12 +42,8 @@ import fireStoreApp from './fireStore';
 import actions from "../Actions/indexActions"
 import components from "../Components/indexComponents"
 
-
-
-console.log("Frame");
-
-
 const frameworkConfig = props => {
+    
 
     Object.assign(React, {
         functions : {},
@@ -64,31 +60,9 @@ const frameworkConfig = props => {
 
 
     //////////////  COMPONENTS //////////////////
-    // React.components.Button = Button;
-    // React.components.NavigationBar = NavigationBar;
-    // React.components.InputText = InputText;
-    // React.components.KeyValue = KeyValue;
-    // React.components.Spinner = Spinner;
-    // React.components.GMaps = GMaps;
-    // React.components.GMapsSearchBox = GMapsSearchBox;
-    // React.components.SwitchesGroup = SwitchesGroup;
-    // React.components.UploadImg = UploadImg;
-    // React.components.Combobox = Combobox;
 
     React.components = components;
 
-    // React.components.Index = Index;
-    // React.components.Home = Home;
-    // React.components.Card = Card;
-    // React.components.CardDetails = CardDetails;
-    // React.components.CardsGrid = CardsGrid;
-    // React.components.User = User;
-    // React.components.UserDetail = UserDetail;
-    // React.components.UsersList = UsersList;
-    // React.components.UserLoadData = UserLoadData;
-    // React.components.UserSection = UserSection;
-    // React.components.List = List;
-    // React.components.Item = Item;
     ///////////////////////////////////////////
 
     ///////// CONFIG //////////////////
@@ -104,6 +78,7 @@ const frameworkConfig = props => {
     React.actions = actions;
     ///////////////////////////////////////////////
     
+    console.log(React);
 
 }
 
