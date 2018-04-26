@@ -34,8 +34,8 @@ class MinCV extends React.Component {
 
         const headerProps = {};
 
-        headerProps.toogleAuth = (user) => {
-            if (user.loginState) {
+        headerProps.toogleAuth = () => {
+            if (props.login.loginState) {
                 props.signOut();
             }
             else {

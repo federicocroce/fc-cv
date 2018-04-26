@@ -10,7 +10,7 @@ const Header = (props) => {
                 <i className='icon-chat' onClick={() => headerProps.setToast('Fede')}></i>
                 <i className='icon-brightness_medium' onClick={() => headerProps.setThem()}></i>
                 <i className="icon-print" onClick={() => window.print()}></i>
-                <i className={headerProps.loginClass} onClick={() => headerProps.toogleAuth(headerProps.login)}></i>
+                <i className={headerProps.loginClass} onClick={() => headerProps.toogleAuth()}></i>
             </div>
             <i className='icon-menu' onClick={() => headerProps.setActiveMenu()}></i>
         </header>
