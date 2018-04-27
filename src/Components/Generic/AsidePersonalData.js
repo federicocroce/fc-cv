@@ -37,6 +37,24 @@ const AsidePersonalData = props => {
                 : null
             }
 
+            {JSON.stringify(personalData.skills) != '{}' ?
+                <section className="container-detail-personal-data table skills">
+                    <i className={personalData.skills.main.icon}></i>
+                    <div className="container-detail">
+                        <span className='text'>{Parser(personalData.skills.main.content)}</span>
+
+                        {personalData.skills.details.map((data, index) => {
+                            return (
+                                <div>
+                                    <span className='text'>{Parser(data.skill)}</span>
+                                    <span className='text'>{Parser(data.rate)}</span>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </section>
+                : null
+            }
         </aside>
     );
 }

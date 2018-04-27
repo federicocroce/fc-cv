@@ -5,7 +5,8 @@ import React from 'react';
 
 const data = {
     list: [],
-    mainData: {}
+    mainData: {},
+    skills:{}
 }
 
 
@@ -18,7 +19,8 @@ const reducerPersonalData = (state = data, action) => {
             return {
                 ...state,
                 list: action.payload.personalData,
-                mainData: action.payload.mainData
+                mainData: action.payload.mainData,
+                skills: action.payload.skills
             };
         case 'FETCH_TEXTO':
             return {

@@ -52,7 +52,7 @@ body {
     width: 30%;
     box-shadow: 0 1px 11px rgba(0, 0, 0, 0.19), 0 2px 8px rgba(0, 0, 0, 0.23); }
     .app-container main .aside-left-container > section {
-      padding: 0 0 8% 8%; }
+      padding: 0 0 0 8%; }
     .app-container main .aside-left-container h1.name {
       text-align: right; }
     .app-container main .aside-left-container .img-profile-container {
@@ -68,6 +68,10 @@ body {
           font-size: 0.8em; }
     .app-container main .aside-left-container .container-detail-personal-data {
       color: #ffffff; }
+      .app-container main .aside-left-container .container-detail-personal-data.skills [class^="icon-"] {
+        padding-top: 7%; }
+      .app-container main .aside-left-container .container-detail-personal-data.skills > div {
+        border-bottom: none; }
       .app-container main .aside-left-container .container-detail-personal-data .text {
         display: block;
         font-size: 0.7em;
@@ -76,10 +80,10 @@ body {
         width: 85%;
         border-bottom: 1px solid #398aca;
         padding: 8% 8% 8% 0; }
-    .app-container main .aside-left-container [class^="icon-"] {
-      display: table-cell;
-      font-size: 1.3em;
-      padding: 10% 20px 0 0; }
+      .app-container main .aside-left-container .container-detail-personal-data [class^="icon-"] {
+        display: table-cell;
+        font-size: 1.3em;
+        padding: 10% 20px 0 0; }
   .app-container main .main-right-section {
     transition: all 0.3s ease;
     background: #e3e3e3;
