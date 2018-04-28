@@ -45,9 +45,9 @@ const AsidePersonalData = props => {
 
                         {personalData.skills.details.map((data, index) => {
                             return (
-                                <div>
+                                <div className='skill-container' key={index}>
                                     <span className='text'>{Parser(data.skill)}</span>
-                                    <span className='text'>{Parser(data.rate)}</span>
+                                    <input type="range" min="0" max={personalData.skills.maxRate} defaultValue={data.rate} className="slider" id="myRange"/>
                                 </div>
                             );
                         })}
