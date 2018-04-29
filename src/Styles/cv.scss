@@ -93,9 +93,9 @@
                 .container-detail-personal-data {
                     color: $primary-color-text; // padding-bottom: 8%;
                     &.skills {
-                        [class^="icon-"] {
-                            padding-top: 7%;
-                        }
+                        // [class^="icon-"] {
+                        //     padding-top: 7%;
+                        // }
                         &>div {
                             border-bottom: none;
                         }
@@ -323,9 +323,9 @@
                         width: 90%;
                         padding: 5% 8% 5% 0;
                     }
-                }
-                [class^="icon-"] {
-                    padding: 6% 2% 0 0;
+                    [class^="icon-"] {
+                        padding: 6% 2% 0 0;
+                    }
                 }
             }
             .message-content {

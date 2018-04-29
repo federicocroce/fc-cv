@@ -68,8 +68,6 @@ body {
           font-size: 0.8em; }
     .app-container main .aside-left-container .container-detail-personal-data {
       color: #ffffff; }
-      .app-container main .aside-left-container .container-detail-personal-data.skills [class^="icon-"] {
-        padding-top: 7%; }
       .app-container main .aside-left-container .container-detail-personal-data.skills > div {
         border-bottom: none; }
       .app-container main .aside-left-container .container-detail-personal-data.skills .skill-container {
@@ -231,7 +229,7 @@ body {
     .app-container main .aside-left-container .container-detail-personal-data .container-detail {
       width: 90%;
       padding: 5% 8% 5% 0; }
-    .app-container main .aside-left-container [class^="icon-"] {
+    .app-container main .aside-left-container .container-detail-personal-data [class^="icon-"] {
       padding: 6% 2% 0 0; }
     .app-container .message-content {
       width: 100%; }
