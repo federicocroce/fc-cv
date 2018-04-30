@@ -47,7 +47,7 @@ const AsidePersonalData = props => {
                             return (
                                 <div className='skill-container' key={index}>
                                     <span className='text'>{Parser(data.skill)}</span>
-                                    <input type="range" min="0" max={personalData.skills.maxRate} defaultValue={data.rate} className="slider" id="myRange"/>
+                                    <input type="range" min="0" max={personalData.skills.maxRate} defaultValue={data.rate} disabled='true' className="slider" id="myRange"/>
                                 </div>
                             );
                         })}

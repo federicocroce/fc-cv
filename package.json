@@ -8,6 +8,7 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "del-cli": "^1.1.0",
     "firebase": "^4.9.0",
     "html-react-parser": "^0.4.3",
     "jquery-lite": "^2.2.3",
@@ -27,7 +28,10 @@
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "react-scripts build npm-run-all build-css",
+    "deploy": "npm-run-all clean && react-scripts build build-css && firebase deploy",
+    "install-firebase": "npm i -g firebase-tools && firebase login --interactive && firebase init",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean": "del-cli build"
   }
 }
