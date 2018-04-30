@@ -1,6 +1,4 @@
 import React from 'react';
-import $ from 'jquery-lite';
-import _ from "lodash";
 // import Home from '../Components/Sections/Home';
 
 //////////////  COMPONENTS //////////////////
@@ -39,46 +37,51 @@ import fireStoreApp from './fireStore';
 ///////////////////////////////////////////
 
 //////////// ACTIONS ///////////////////////
-import actions from "../Actions/indexActions"
-import components from "../Components/indexComponents"
+import actions from "../Actions/indexActions";
+import components from "../Components/indexComponents";
+import config from "./indexConfig";
+import functions from "./indexFunctions";
+
 
 const frameworkConfig = props => {
     
 
     Object.assign(React, {
-        functions : {},
-        components : {},
-        actions:{},
-        config:{}
+        functions : functions,
+        components : components,
+        actions: actions,
+        config: config
     });
 
+
     //////////////  FUNCTIONS //////////////////
-    React.functions.isUndefinedOrNullOrEmpty = (element) => _.isEmpty(element) || element == null || element == undefined  ? true : false;
+    // React.functions.isUndefinedOrNullOrEmpty = (element) => _.isEmpty(element) || element == null || element == undefined  ? true : false;
     ///////////////////////////////////////////
 
+    // React.config = config;
 
-
-
+    // React.actions = actions;
     //////////////  COMPONENTS //////////////////
 
-    React.components = components;
+    // React.components = components;
 
     ///////////////////////////////////////////
 
     ///////// CONFIG //////////////////
-    React.config.storeHistory = storeHistory;
-    React.config.fieldValidations = fieldValidations;
-    React.config.linksRoutes = linksRoutes();    
-    React.config.firebaseApp = firebaseApp;
-    React.config.fireStoreApp = fireStoreApp;
+    
+    // React.config.storeHistory = storeHistory;
+    // React.config.fieldValidations = fieldValidations;
+    // React.config.linksRoutes = linksRoutes;    
+    // React.config.firebaseApp = firebaseApp;
+    // React.config.fireStoreApp = fireStoreApp;
     // console.log(React.config);
     ///////////////////////////////////////////////
 
     //////////// ACTIONS ////////////////////
-    React.actions = actions;
+    
     ///////////////////////////////////////////////
     
-    console.log(React);
+    // console.log(React);
 
 }
 

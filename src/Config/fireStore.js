@@ -120,6 +120,7 @@ fireStoreApp.removeItem = (dispatch, collection, id) => {
 
 
 fireStoreApp.hadleAuth = (dispatch, action) => {
+  React.actions.actionsLoading.setLoading(dispatch, true);
   const provider = new firebase.auth.GoogleAuthProvider();
 
   firebase.auth().signInWithPopup(provider).then(function (result) {
@@ -132,12 +133,14 @@ fireStoreApp.hadleAuth = (dispatch, action) => {
       type: action,
       payload: login
     });
+    React.actions.actionsLoading.setLoading(dispatch, false);
     React.actions.actionsToast.setToast(dispatch, "Bienvenido " + result.user.displayName);
     // var token = result.credential.accessToken;
     // // The signed-in user info.
     // var user = result.user;
     // ...
   }).catch(function (error) {
+    React.actions.actionsLoading.setLoading(dispatch, false);
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
