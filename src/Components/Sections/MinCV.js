@@ -44,7 +44,7 @@ class MinCV extends React.Component {
 
         }
 
-        
+
         const personalData = props.personalData;
         const footer = props.footer;
 
@@ -77,8 +77,13 @@ class MinCV extends React.Component {
         props.experiences.createItem = this.props.createExperiences;
         props.experiences.removeItem = this.props.removeExperiences;
 
+        props.ownProjects.createItem = this.props.createOwnProjects;
+        props.ownProjects.removeItem = this.props.removeOwnProjects;
+
         props.estudies.createItem = this.props.createEstudies;
         props.estudies.removeItem = this.props.removeEstudies;
+
+
 
         return (
 
@@ -89,13 +94,13 @@ class MinCV extends React.Component {
                 {props.loading.isLoading ? <components.Spinner /> : null}
 
                 <components.Header headerProps={headerProps} state={this.state} />
-                
+
                 <main className="table">
                     <components.AsidePersonalData personalData={personalData} />
                     <components.MainRightSection content={content} />
                 </main>
 
-                <components.Footer footer={footer}/>
+                <components.Footer footer={footer} />
             </div>
         );
     }
@@ -126,6 +131,12 @@ const mapDispatchToProps = dispatch => {
         },
         removeExperiences(id) {
             actions.actionsExperiences.removeItem(dispatch, id)
+        },
+        createOwnProjects() {
+            actions.actionsOwnProjects.createAutoID(dispatch)
+        },
+        removeOwnProjects(id) {
+            actions.actionsOwnProjects.removeItem(dispatch, id)
         },
         fetchPersonalData() {
             actions.actionsPersonalData.fetchObjects(dispatch)
