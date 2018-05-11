@@ -22,6 +22,7 @@ class MinCV extends React.Component {
 
         this.props.fetchEstudies();
         this.props.fetchExperiences();
+        this.props.fetchOwnProjects();
         this.props.fetchPersonalData();
         this.props.fetchFooter();
     }
@@ -52,8 +53,8 @@ class MinCV extends React.Component {
 
         const content = [
             props.experiences,
-            props.estudies
-
+            props.ownProjects,
+            props.estudies 
         ];
 
         const mainClass = classNames({
@@ -110,6 +111,7 @@ const mapStateToProps = (state) => {
     return {
         estudies: state.estudies,
         experiences: state.experiences,
+        ownProjects: state.ownProjects,
         personalData: state.personalData,
         footer: state.footer,
         login: state.login,
@@ -125,6 +127,9 @@ const mapDispatchToProps = dispatch => {
         },
         fetchExperiences() {
             actions.actionsExperiences.fetchObjects(dispatch)
+        },
+        fetchOwnProjects() {
+            actions.actionsOwnProjects.fetchObjects(dispatch)
         },
         createExperiences() {
             actions.actionsExperiences.createAutoID(dispatch)

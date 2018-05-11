@@ -7,7 +7,7 @@ const MainRightSection = props => {
 
             {props.content.map((data, index) => {
                 return (
-                    data.list.length > 0 ?
+                    data.generic != {} ?
                         <section key={index} className="table">
                             <i className={data.generic.icon}></i>
 
