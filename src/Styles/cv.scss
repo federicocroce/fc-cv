@@ -163,10 +163,11 @@
                         position: absolute;
                         right: 2%;
                         font-size: 1em;
-                        top: 1%;
+                        top: 17px;
                         &:hover {
                             cursor: pointer;
                         }
+                        &.add-icon{top: 12px;}
                     }
                     h2,
                     h3,
@@ -478,11 +479,6 @@
         border: none;
         border-radius: 50px; // background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #529de1), color-stop(100%, #245e8f));
         background: white;
-        /* android <= 2.2 */
-        // background-image: -webkit-linear-gradient(top, #529de1 0, #245e8f 100%);
-        /* older mobile safari and android > 2.2 */
-        ; // background-image: linear-gradient(to bottom, #529de1 0, #245e8f 100%);
-        /* W3C */
     }
 
     input[type="range"]::-moz-range-thumb {

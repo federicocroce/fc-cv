@@ -116,9 +116,11 @@ body {
         position: absolute;
         right: 2%;
         font-size: 1em;
-        top: 1%; }
+        top: 17px; }
         .app-container main .main-right-section section i.actions-item:hover {
           cursor: pointer; }
+        .app-container main .main-right-section section i.actions-item.add-icon {
+          top: 12px; }
       .app-container main .main-right-section section h2,
       .app-container main .main-right-section section h3,
       .app-container main .main-right-section section h4,
@@ -345,10 +347,7 @@ input[type="range"]::-webkit-slider-thumb {
   height: 15px;
   border: none;
   border-radius: 50px;
-  background: white;
-  /* android <= 2.2 */
-  /* older mobile safari and android > 2.2 */
-  /* W3C */ }
+  background: white; }
 
 input[type="range"]::-moz-range-thumb {
   width: 100%;
