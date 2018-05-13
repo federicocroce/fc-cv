@@ -167,7 +167,9 @@
                         &:hover {
                             cursor: pointer;
                         }
-                        &.add-icon{top: 12px;}
+                        &.add-icon {
+                            top: 12px;
+                        }
                     }
                     h2,
                     h3,
@@ -233,8 +235,12 @@
         .container-footer {
             min-height: 60px;
             background: $color-f6e;
-            padding: 2% 10%;
+            padding: 2% 8%;
             text-align: center;
+            h3 {
+                color: $secondary-color-light;
+                margin: 10px 0 15px 0;
+            }
             .img-tecnologies {
                 filter: grayscale(95%);
                 transition: all $time-transition ease;

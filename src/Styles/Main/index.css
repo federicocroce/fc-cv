@@ -165,8 +165,11 @@ body {
   .app-container .container-footer {
     min-height: 60px;
     background: #002f6e;
-    padding: 2% 10%;
+    padding: 2% 8%;
     text-align: center; }
+    .app-container .container-footer h3 {
+      color: #e3e3e3;
+      margin: 10px 0 15px 0; }
     .app-container .container-footer .img-tecnologies {
       filter: grayscale(95%);
       transition: all 0.3s ease;
