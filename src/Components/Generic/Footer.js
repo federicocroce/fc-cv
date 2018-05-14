@@ -8,7 +8,7 @@ const Footer = props => {
         <footer className="container-footer">
             {footer.list.length > 0 ?
                 <section>
-                    <h3>Tecnologías utilizadas en este CV</h3>
+                    <h4>Tecnologías utilizadas en este CV</h4>
                     {footer.list.map((data, index) => {
                         return (
                             <a target="_blank" href={data.link} key={index} className="img-tecnologies">
