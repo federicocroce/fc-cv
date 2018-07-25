@@ -10,7 +10,7 @@ const AsidePersonalData = props => {
             {Object.keys(personalData.mainData).length != 0 ?
                 <div className="img-profile-container">
                     {/*<img src={personalData.mainData.img}></img>*/}
-                    <amp-img src={personalData.mainData.img} layout="responsive" width={personalData.mainData.width} height={personalData.mainData.height}></amp-img>
+                    <amp-img src={personalData.mainData.img} layout="responsive" width={personalData.mainData.width} alt='Imagen de perfil' height={personalData.mainData.height}></amp-img>
                     <div className="content-img">
                         <h1 className="name">{personalData.mainData.name}</h1>
                         <p>{personalData.mainData.position}</p>
