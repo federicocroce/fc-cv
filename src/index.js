@@ -1,13 +1,20 @@
 import React from 'react';
-import {components} from 'react';
+// import {components} from 'react';
 import ReactDOM from 'react-dom';
 
-import './Styles/Main/index.css';
-import './Assets/icons/style.css';
-import frameworkConfig from './Config/frameworkConfig';
+
+// import {setFrameworkConfig} from './Config/frameworkConfig';
+
 
 import registerServiceWorker from './registerServiceWorker';
 
-frameworkConfig();
-ReactDOM.render(<components.Index />, document.getElementById('root'));
+// frameworkConfig();
+// ReactDOM.render(<components.Index />, document.getElementById('root'));
+// registerServiceWorker();
+
+import App from './App'
+
+// setFrameworkConfig();
+
+ReactDOM.render(<App/>, document.getElementById('root'));
 registerServiceWorker();

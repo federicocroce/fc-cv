@@ -1,20 +1,28 @@
 import React from 'react';
 
-import actions from "../Actions/indexActions";
+// import actions from "../Actions/indexActions";
 import components from "../Components/indexComponents";
-import config from "./indexConfig";
-import functions from "./indexFunctions";
+// import config from "./indexConfig";
+// import functions from "./indexFunctions";
 
 
-const frameworkConfig = props => {
+const setFrameworkConfig = () => {
     Object.assign(React, {
-        functions : functions,
+        // functions : functions,
         components : components,
-        actions: actions,
-        config: config
+        // actions: actions
     });
 }
 
-export default frameworkConfig;
+const setframeworkIndexConfig = () => {
+    Object.assign(React, {
+        // config: config
+    });
+}
+
+export {
+    setFrameworkConfig,
+    setframeworkIndexConfig
+};
 
 

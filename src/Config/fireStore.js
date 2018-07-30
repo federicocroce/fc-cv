@@ -1,7 +1,19 @@
 import React from 'react';
-import * as firebase from 'firebase';
+// import * as firebase from 'firebase';
 // var Firestore = require('@google-cloud/firestore');
-require("firebase/firestore");
+// require("firebase/firestore");
+
+import firebase from 'firebase';
+import {firestore as db} from 'firebase';
+// import * as firebase from 'firebase';
+
+// const storage = firebase.storage();
+// const db = firebase.firestore();
+
+// const db = require("firebase/firestore");
+// require("firebase/firestore");
+
+// var firebase = require("firebase/app");
 
 
 const fireStoreApp = {};
@@ -18,51 +30,44 @@ const fireStoreApp = {};
 //   storageBucket: "test-74eeb.appspot.com",
 //   messagingSenderId: "984496005171"
 // };
-var config = {
-  apiKey: "AIzaSyDINSbmIwTdqRE7yDhkow46fs3JxW5y8KM",
-  authDomain: "test-74eeb.firebaseapp.com",
-  databaseURL: "https://test-74eeb.firebaseio.com",
-  projectId: "test-74eeb",
-  storageBucket: "test-74eeb.appspot.com",
-  messagingSenderId: "984496005171"
-};
-
-firebase.initializeApp(config);
-const storage = firebase.storage();
+{/* <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script> */}
 
 
-const db = firebase.firestore();
+// const storage = firebase.storage();
 
 
-fireStoreApp.getStorageUrlImg = function (path) {
 
-  const pathReference = storage.ref(path);
 
-  pathReference.getDownloadURL().then(function (url) {
-    return url;
-  }).catch(function (error) {
 
-    // A full list of error codes is available at
-    // https://firebase.google.com/docs/storage/web/handle-errors
-    switch (error.code) {
-      case 'storage/object_not_found':
-        // File doesn't exist
-        break;
+// fireStoreApp.getStorageUrlImg = function (path) {
 
-      case 'storage/unauthorized':
-        // User doesn't have permission to access the object
-        break;
+//   const pathReference = storage.ref(path);
 
-      case 'storage/canceled':
-        // User canceled the upload
-        break;
+//   pathReference.getDownloadURL().then(function (url) {
+//     return url;
+//   }).catch(function (error) {
 
-      case 'storage/unknown':
-        // Unknown error occurred, inspect the server response
-        break;
-    }
-  });
-}
+//     // A full list of error codes is available at
+//     // https://firebase.google.com/docs/storage/web/handle-errors
+//     switch (error.code) {
+//       case 'storage/object_not_found':
+//         // File doesn't exist
+//         break;
+
+//       case 'storage/unauthorized':
+//         // User doesn't have permission to access the object
+//         break;
+
+//       case 'storage/canceled':
+//         // User canceled the upload
+//         break;
+
+//       case 'storage/unknown':
+//         // Unknown error occurred, inspect the server response
+//         break;
+//     }
+//   });
+// }
 
 
 // firestore.getCollections().then(collections => {
@@ -105,7 +110,7 @@ fireStoreApp.createAutoID = (dispatch, collection, document) => {
     .catch(function (error) {
       React.actions.actionsToast.setToast(dispatch, errorMaps[error.code], 'error');
       React.actions.actionsLoading.setLoading(dispatch, false);
-      // console.error("Error adding document: ", error);
+      console.error("Error adding document: ", error);
     });
 }
 
