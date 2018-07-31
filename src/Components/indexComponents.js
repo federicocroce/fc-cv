@@ -7,9 +7,11 @@
 // import Footer from "./Generic/Footer";
 // import Header from "./Generic/Header";
 
-const newImport = () =>{
-    import Toast from "./Utilities/Toast";
-}
+import Toast from "./Utilities/Toast";
+
+// const newImport = () =>{
+//     import Toast from "./Utilities/Toast";
+// }
 
 // import Spinner from "./Utilities/Spinner";
 
@@ -18,7 +20,7 @@ const components = {
     // MinCV,
     // Index,
     // ContentCard,
-    Toast:Toast ? Toast : newImport(),
+    Toast
     // Spinner,
     // MainRightSection,
     // AsidePersonalData,
