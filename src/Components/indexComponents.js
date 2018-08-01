@@ -1,31 +1,58 @@
-// import MinCV from "./Sections/MinCV";
-// import Index from "./Sections/Index";
+import asyncComponent from './asyncComponent'
 
-// import ContentCard from "./Generic/ContentCard";
-// import MainRightSection from "./Generic/MainRightSection";
-// import AsidePersonalData from "./Generic/AsidePersonalData";
-// import Footer from "./Generic/Footer";
-// import Header from "./Generic/Header";
+const setComponents = () => {
+    asyncComponent('./Sections/MinCV"', 'MinCV');
+    asyncComponent('./Sections/Index', 'Index');
 
-import Toast from "./Utilities/Toast";
+    asyncComponent('./Generic/ContentCard', 'Toast');
+    asyncComponent('./Generic/MainRightSection', 'MainRightSection');
+    asyncComponent('./Generic/AsidePersonalData', 'AsidePersonalData');
+    asyncComponent('./Generic/Footer', 'Footer');
+    asyncComponent('./Generic/Header', 'Header');
 
-// const newImport = () =>{
-//     import Toast from "./Utilities/Toast";
-// }
-
-// import Spinner from "./Utilities/Spinner";
-
-
-const components = {    
-    // MinCV,
-    // Index,
-    // ContentCard,
-    Toast
-    // Spinner,
-    // MainRightSection,
-    // AsidePersonalData,
-    // Footer,
-    // Header
+    asyncComponent('./Utilities/Spinner', 'Spinner');
+    asyncComponent('./Utilities/Toast', 'Toast');
 }
 
-export default components;
+export default setComponents;
+
+
+
+
+
+
+
+
+
+
+// // import MinCV from "./Sections/MinCV";
+// // import Index from "./Sections/Index";
+
+// // import ContentCard from "./Generic/ContentCard";
+// // import MainRightSection from "./Generic/MainRightSection";
+// // import AsidePersonalData from "./Generic/AsidePersonalData";
+// // import Footer from "./Generic/Footer";
+// // import Header from "./Generic/Header";
+
+// import Toast from "./Utilities/Toast";
+
+// // const newImport = () =>{
+// //     import Toast from "./Utilities/Toast";
+// // }
+
+// // import Spinner from "./Utilities/Spinner";
+
+
+// const components = {    
+//     // MinCV,
+//     // Index,
+//     // ContentCard,
+//     Toast
+//     // Spinner,
+//     // MainRightSection,
+//     // AsidePersonalData,
+//     // Footer,
+//     // Header
+// }
+
+// export default components;

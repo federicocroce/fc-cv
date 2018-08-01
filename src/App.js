@@ -6,7 +6,7 @@ import './Assets/icons/style.css';
 
 // import {setframeworkIndexConfig, setFrameworkConfig} from './Config/frameworkConfig';
 // import {setFrameworkConfig} from './Config/frameworkConfig';
-import {setframeworkIndexConfig} from './Config/frameworkConfig';
+// import {setframeworkIndexConfig} from './Config/frameworkConfig';
 // frameworkConfig();
 
 
@@ -28,7 +28,7 @@ class App extends Component {
 
   componentWillMount(){
     // setFrameworkConfig();
-    setframeworkIndexConfig();
+    // setframeworkIndexConfig();
   }
 
  
@@ -44,7 +44,7 @@ class App extends Component {
         <header className="App-header">
 
           {/* <Toast messages={testToast} /> */}
-          {/* <components.Toast messages={testToast} /> */}
+           <components.Toast messages={testToast} /> 
 
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <h1 className="App-title">Welcome to React</h1>
