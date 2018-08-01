@@ -1,8 +1,9 @@
 import asyncComponent from './asyncComponent'
 
 const setComponents = () => {
-    asyncComponent('./Sections/MinCV"', 'MinCV');
     asyncComponent('./Sections/Index', 'Index');
+    asyncComponent('./Sections/MinCV"', 'MinCV');
+    
 
     asyncComponent('./Generic/ContentCard', 'Toast');
     asyncComponent('./Generic/MainRightSection', 'MainRightSection');

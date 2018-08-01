@@ -1,10 +1,10 @@
 import storeHistory from './store.js';
-import fireStoreApp from './fireStore';
+// import fireStoreApp from './fireStore';
 
 
 const config = {    
     storeHistory,
-    fireStoreApp
+    // fireStoreApp
 }
 
 export default config;
