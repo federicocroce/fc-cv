@@ -5,6 +5,19 @@ const AsidePersonalData = props => {
 
     const personalData = props.personalData;
 
+    const calculateAge = (args) => {
+        var ageDifMs = Date.now() - new Date(args).getTime();
+        var ageDate = new Date(ageDifMs);
+        const age = Math.abs(ageDate.getUTCFullYear() - 1970);
+
+        console.log(age)
+    
+        return age < 1 ? `${age} año` : `${age} años`;
+    }
+
+    // calculateAge(new Date(1989, 1, 23))
+    
+
     return (
         <aside className="aside-left-container">
             {Object.keys(personalData.mainData).length != 0 ?
@@ -23,12 +36,14 @@ const AsidePersonalData = props => {
             {personalData.list.length > 0 ?
                 <section>
                     {personalData.list.map((data, index) => {
+                        // console.log(data.subcontent)
                         return (
                             <a href={data.link} key={index} className="container-detail-personal-data table">
                                 <i className={data.icon}></i>
                                 <div className="container-detail">
                                     <span className='text'>{Parser(data.content)}</span>
                                     <span className='text'>{Parser(data.subcontent)}</span>
+                                    {data.callback && <span className='text'>{eval(data.callback)}</span>}
                                 </div>
                             </a>
                         );
